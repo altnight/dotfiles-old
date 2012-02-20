@@ -1,5 +1,5 @@
-source /usr/local/bin/virtualenvwrapper.sh
 export WORKON_HOME=${HOME}/venvs
+source /usr/local/bin/virtualenvwrapper.sh
 export PIP_DOWNLOAD_CACHE=${HOME}/.pip_cache
 export PIP_RESPECT_VIRTUALENV=true
 export PIP_REQUIRE_VIRTUELENV=true
