@@ -4,8 +4,17 @@ export PIP_DOWNLOAD_CACHE=${HOME}/.pip_cache
 export PIP_RESPECT_VIRTUALENV=true
 export PIP_REQUIRE_VIRTUELENV=true
 
+case "$OSTYPE" in
+    darwin*)
 alias l="ls -G"
 alias ls="ls -G"
+;;
+    linux*)
+alias l="ls --color=auto"
+alias ls="ls --color=auto"
+;;
+esac
+
 alias le="less"
 alias c="cd .."
 alias lsa='ls -A'
