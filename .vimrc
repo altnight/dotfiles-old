@@ -123,8 +123,15 @@ imap <C-k> <Plug>(neocomplcache_snippets_expand)
 "   \ 'javascript' : $HOME.'/.vim/javascript.dict',
 "   \ 'html' : $HOME.'/.vim/javascript.dict',
 "   \}
-autocmd FileType html set dictionary=$HOME/dotfiles/vimfiles/javascript.dict,$HOME/dotfiles/vimfiles/jQuery.dict
-autocmd FileType javascript set dictionary=$HOME/dotfiles/vimfiles/javascript.dict,$HOME/dotfiles/vimfiles/jQuery.dict
+autocmd FileType html setlocal dictionary=$HOME/dotfiles/vimfiles/javascript.dict,$HOME/dotfiles/vimfiles/jQuery.dict
+autocmd FileType javascript setlocal dictionary=$HOME/dotfiles/vimfiles/javascript.dict,$HOME/dotfiles/vimfiles/jQuery.dict
+
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+
 "vimfilerをデフォルトにする
 let g:vimfiler_as_default_explorer = 1
 "taglist Macの /usr/bin/ctags は消すこと
