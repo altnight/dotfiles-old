@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DOT_FILES=( .vimrc .tmux.conf .bashrc .bash_profile)
+DOT_FILES=( .vimrc .tmux.conf .bashrc)
 
 for file in ${DOT_FILES[@]}
 do
@@ -10,4 +10,5 @@ do
   else
     ln -s $HOME/dotfiles/$file $HOME/$file
     echo "シンボリックリンクを貼りました: $file"
+  fi
 done
