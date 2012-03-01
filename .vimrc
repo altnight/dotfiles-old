@@ -15,7 +15,9 @@ NeoBundle 'git://github.com/Shougo/unite.vim.git'
 NeoBundle 'git://github.com/mattn/zencoding-vim.git'
 NeoBundle 'taglist.vim'
 NeoBundle 'sudo.vim'
+NeoBundle 'nginx.vim'
 NeoBundle 'molokai'
+NeoBundle 'desert.vim'
 
 syntax on
 filetype plugin on
@@ -85,15 +87,11 @@ nnoremap <silent>> <C-w>>
 nnoremap <silent>< <C-w><
 "FileType
 "シフト移動幅
-autocmd FileType * set shiftwidth=4
 "ファイル内の <Tab> が対応する空白の数
-autocmd FileType * set tabstop=4
-autocmd FileType javascript set tabstop=2
-autocmd FileType javascript set shiftwidth=2
-autocmd FileType html set tabstop=2
-autocmd FileType html set shiftwidth=2
-autocmd FileType python set tabstop=4
-autocmd FileType python set shiftwidth=4
+autocmd FileType * set tabstop=4 shiftwidth=4
+autocmd FileType javascript set tabstop=2 shiftwidth=2
+autocmd FileType html set tabstop=2 shiftwidth=2
+autocmd FileType python set tabstop=4 shiftwidth=4
 
 "" unite.vim
 " 入力モードで開始する
@@ -128,3 +126,5 @@ let g:vimfiler_as_default_explorer = 1
 set tags=tags
 "tn で新しいタブを開く。移動はgt
 nnoremap <silent>tn :<C-u>:tabnew<CR>
+"nginx.vim
+au BufRead,BufNewFile /etc/nginx/* set ft=nginx
