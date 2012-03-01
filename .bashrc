@@ -13,6 +13,10 @@ alias ls="ls -G"
 alias l="ls --color=auto"
 alias ls="ls --color=auto"
 ;;
+    cygwin*)
+alias l="ls --color=auto"
+alias ls="ls --color=auto"
+;;
 esac
 
 alias le="less"
