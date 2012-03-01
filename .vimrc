@@ -13,6 +13,7 @@ NeoBundle 'git://github.com/Shougo/neobundle.vim.git'
 NeoBundle 'git://github.com/Shougo/vimfiler.git'
 NeoBundle 'git://github.com/Shougo/unite.vim.git'
 NeoBundle 'git://github.com/mattn/zencoding-vim.git'
+"NeoBundle 'git://github.com/scrooloose/nerdcommenter.git'
 NeoBundle 'taglist.vim'
 NeoBundle 'sudo.vim'
 NeoBundle 'nginx.vim'
@@ -28,7 +29,7 @@ colorscheme molokai
 "新しい行のインデントを現在行と同じにする
 "set autoindent
 "ファイル保存ダイアログの初期ディレクトリをバッファファイル位置に設定
-set browsedir=buffer 
+set browsedir=buffer
 "クリップボードをWindowsと連携
 set clipboard=unnamed
 "Vi互換をオフ
@@ -64,6 +65,10 @@ set nowrapscan
 set hlsearch
 ""ハイライトをEscで抜ける
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
+" 保存時に行末の空白を除去する
+autocmd BufWritePre * :%s/\s\+$//ge
+" 保存時にtabをスペースに変換する
+"autocmd BufWritePre * :%s/\t/  /ge
 "Zen Coding
 let g:user_zen_expandabbr_key = '<c-e>'
 "minibuffer
