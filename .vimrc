@@ -168,10 +168,10 @@ inoremap << <><LEFT>
 inoremap {% {%<Space><Space>%}<LEFT><LEFT><LEFT>
 inoremap [[ []<LEFT>
 "Tabでウィンドウの移動
-nnoremap <silent><Tab> <C=w>w
+nnoremap <silent><Tab> <C-w>w
 ">や<で幅調節
-nnoremap <silent>> <C=w>>
-nnoremap <silent>< <C=w><
+nnoremap <silent>> <C-w>>
+nnoremap <silent>< <C-w><
 "FileType
 "シフト移動幅
 "ファイル内の <Tab> が対応する空白の数
@@ -224,4 +224,4 @@ nnoremap <silent>,e :<C-u>VimFiler<CR>
 "taglist Macの /usr/bin/ctags は消すこと
 set tags=tags
 "tn で新しいタブを開く。移動はgt
-nnoremap <silent>tn :<C=u>:tabnew<CR>
+nnoremap <silent>tn :<C-u>:tabnew<CR>
