@@ -1,5 +1,6 @@
 #!/bin/bash
 
+#不必要っぽいのをとりあえず消す
 sudo apt-get remove -y tracker;
 sudo apt-get remove -y thunderbird;
 sudo apt-get remove -y pidgin;
@@ -14,10 +15,12 @@ sudo apt-get remove -y evolution;
 sudo apt-get remove -y stardict;
 sudo apt-get remove -y gnome-game;
 
+#とりあえずアップデート
 sudo apt-get update;
 sudo apt-get upgrade -y;
 sudo apt-get update;
 
+#いちおういれる
 sudo apt-get install -y language-pack-ja;
 sudo dpkg-reconfigure locales;
 
@@ -27,7 +30,7 @@ if [ -f ~/.bashrc ] ; then #.bashrcがあるならそっちをつかう
 fi
 EOF
 
-
+#各種必要なものをインストール
 sudo apt-get install -y ntp;
 sudo apt-get install -y vim;
 sudo apt-get install -y git;
@@ -41,15 +44,18 @@ sudo apt-get install -y ctags;
 mkdir ~/.bundle;
 git clone git://github.com/Shougo/neobundlevim.git ~/.bundle/neobundle.vim;
 
+#gitのデフォルト設定
 git config --global user.name "altnight";
 git config --global user.email altnightsight@gmail.com;
 git config --global core.editor 'vim -c "set fenc=utf-8"';
 
+#Pythonまわりの設定
 sudo apt-get install -y python-setuptools;
 sudo easy_install pip;
 pip install ipython;
 mkdir ~/venvs;
-#pip install virtualenv;
-#pip install virtualenvwrapper;
+pip install virtualenv;
+pip install virtualenvwrapper;
+
 
 #sudo cat "tmpfs /tmp tmpfs defaults,noatime,size=378m 0 0" >> /etc/fstab
