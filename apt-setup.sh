@@ -43,7 +43,7 @@ sudo apt-get install -y ctags;
 
 #NeoBundleするための準備
 mkdir ~/.vim;
-git clone git://github.com/Shougo/neobundlevim.git ~/.vim/neobundle.vim;
+git clone git://github.com/Shougo/neobundle.vim.git ~/.vim/neobundle.vim;
 
 #gitのデフォルト設定
 git config --global user.name "altnight";
