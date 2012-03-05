@@ -1,3 +1,6 @@
+"NeoBundleの初期設定
+"mkdir ~/.bundle
+"NeoBundleは git clone git://github.com/Shougo/neobundle.vim.git ./bundle/neobundle.vim しておく
 set nocompatible
 filetype off
 
@@ -24,6 +27,7 @@ NeoBundle 'desert.vim'
 syntax on
 filetype plugin on
 set encoding=utf-8
+"256色カラー。各種ターミナルとVimとtmuxやscreenが対応している必要がある
 set t_Co=256
 colorscheme molokai
 
@@ -129,6 +133,7 @@ imap <C-k> <Plug>(neocomplcache_snippets_expand)
 autocmd FileType html setlocal dictionary=$HOME/dotfiles/vimfiles/javascript.dict,$HOME/dotfiles/vimfiles/jQuery.dict
 autocmd FileType javascript setlocal dictionary=$HOME/dotfiles/vimfiles/javascript.dict,$HOME/dotfiles/vimfiles/jQuery.dict
 
+"neocomplcacheのオムニ補完
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
