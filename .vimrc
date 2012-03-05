@@ -110,7 +110,7 @@ autocmd FileType python set tabstop=4 shiftwidth=4
 " バッファ一覧
 nnoremap <silent> fb :<C-u>Unite buffer<CR>
 " ファイル一覧
-nnoremap <silent> ff :<C-u>UniteWithBufferDir -buffer-name=dotfiles file<CR>
+nnoremap <silent> ff :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
 " レジスタ一覧
 nnoremap <silent> fr :<C-u>Unite -buffer-name=register register<CR>
 " 最近使用したファイル一覧
