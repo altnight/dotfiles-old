@@ -111,7 +111,7 @@ set t_Co=256
 colorscheme molokai
 
 "新しい行のインデントを現在行と同じにする
-set autoindent
+"set autoindent
 "ファイル保存ダイアログの初期ディレクトリをバッファファイル位置に設定
 set browsedir=buffer
 "クリップボードをWindowsと連携
