@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 #不必要っぽいのをとりあえず消す
 sudo apt-get remove -y tracker;
@@ -41,8 +41,9 @@ sudo apt-get install -y tmux;
 sudo apt-get install -y sqlite3;
 sudo apt-get install -y ctags;
 
-mkdir ~/.bundle;
-git clone git://github.com/Shougo/neobundlevim.git ~/.bundle/neobundle.vim;
+#NeoBundleするための準備
+mkdir ~/.vim;
+git clone git://github.com/Shougo/neobundlevim.git ~/.vim/neobundle.vim;
 
 #gitのデフォルト設定
 git config --global user.name "altnight";

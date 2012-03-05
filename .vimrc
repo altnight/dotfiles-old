@@ -1,13 +1,13 @@
 "NeoBundleの初期設定
 "mkdir ~/.bundle
-"NeoBundleは git clone git://github.com/Shougo/neobundle.vim.git ./bundle/neobundle.vim しておく
+"NeoBundleは git clone git://github.com/Shougo/neobundle.vim.git ./.vim/neobundle.vim しておく
 set nocompatible
 filetype off
 
 if has('vim_starting')
-  set runtimepath+=~/.bundle/neobundle.vim
+  set runtimepath+=~/.vim/neobundle.vim
 
-  call neobundle#rc(expand('~/.bundle'))
+  call neobundle#rc(expand('~/.vim'))
 endif
 
 NeoBundle 'git://github.com/Shougo/neocomplcache.git'
