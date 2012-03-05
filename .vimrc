@@ -1,6 +1,6 @@
 "NeoBundleの初期設定
 "mkdir ~/.bundle
-"NeoBundleは git clone git://github.com/Shougo/neobundle.vim.git ./.vim/neobundle.vim しておく
+"NeoBundleは git clone git://github.com/Shougo/neobundle.vim.git ~/.vim/neobundle.vim しておく
 set nocompatible
 filetype off
 
