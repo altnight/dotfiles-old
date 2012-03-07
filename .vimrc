@@ -175,7 +175,7 @@ nnoremap <silent>< <C=w><
 "FileType
 "シフト移動幅
 "ファイル内の <Tab> が対応する空白の数
-autocmd FileType * set tabstop=4 shiftwidth=4
+autocmd FileType * set tabstop=2 shiftwidth=2
 autocmd FileType javascript set tabstop=2 shiftwidth=2
 autocmd FileType html set tabstop=2 shiftwidth=2
 autocmd FileType python set tabstop=4 shiftwidth=4
