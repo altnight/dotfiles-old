@@ -85,6 +85,7 @@ NeoBundle 'taglist.vim'
 "taglist Macの /usr/bin/ctags は消すこと
 set tags=tags
 
+"異なるvim間でのyank共有
 NeoBundle 'yanktmp.vim'
 map <silent> sy :call YanktmpYank()<CR>
 map <silent> sp :call YanktmpPaste_p()<CR>
