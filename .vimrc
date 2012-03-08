@@ -85,6 +85,11 @@ NeoBundle 'taglist.vim'
 "taglist Macの /usr/bin/ctags は消すこと
 set tags=tags
 
+NeoBundle 'yanktmp.vim'
+map <silent> sy :call YanktmpYank()<CR>
+map <silent> sp :call YanktmpPaste_p()<CR>
+map <silent> sP :call YanktmpPaste_P()<CR>
+
 NeoBundle 'sudo.vim'
 "vi sudo:/etc/nginx/nginx.conf などと使う
 "現在開いているファイルをsudoで開くには :e sudo:%
