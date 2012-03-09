@@ -43,6 +43,8 @@ sudo apt-get install -y ctags;
 
 #NeoBundleするための準備
 mkdir ~/.vim;
+sudo chown -R altnight:altnight .vim;
+sudo chown -R altnight:altnight .viminfo;
 git clone git://github.com/Shougo/neobundle.vim.git ~/.vim/neobundle.vim;
 
 #gitのデフォルト設定
@@ -53,10 +55,10 @@ git config --global core.editor 'vim -c "set fenc=utf-8"';
 #Pythonまわりの設定
 sudo apt-get install -y python-setuptools;
 sudo easy_install pip;
-pip install ipython;
+sudo pip install ipython;
 mkdir ~/venvs;
-pip install virtualenv;
-pip install virtualenvwrapper;
+sudo pip install virtualenv;
+suod pip install virtualenvwrapper;
 
 
 #sudo cat "tmpfs /tmp tmpfs defaults,noatime,size=378m 0 0" >> /etc/fstab
