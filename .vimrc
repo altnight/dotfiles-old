@@ -42,6 +42,10 @@ autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
+"英語補完
+"うまく動かない？
+NeoBundle 'https://github.com/ujihisa/neco-look.git'
+
 NeoBundle 'git://github.com/Shougo/neocomplcache-snippets-complete.git'
 "neocomplcache
 "ネオコンのスニペット展開
@@ -105,11 +109,18 @@ au BufRead,BufNewFile /etc/nginx/* set ft=nginx
 "let g:miniBufExplMapWindowNavArrows = 1
 "let g:miniBufExplMapCTabSwitchBuffs = 1
 
+
 "=================================================
 "colorscheme
 "=================================================
+"molokai
 NeoBundle 'molokai'
+"desert
 NeoBundle 'desert.vim'
+"desert256
+NeoBundle 'desert256.vim'
+"ir_black
+NeoBundle 'git://github.com/wgibbs/vim-irblack.git'
 
 "=================================================
 "通常設定"
@@ -119,7 +130,7 @@ filetype plugin on
 set encoding=utf-8
 "256色カラー。各種ターミナルとVimとtmuxやscreenが対応している必要がある
 set t_Co=256
-colorscheme molokai
+colorscheme ir_black
 
 "新しい行のインデントを現在行と同じにする
 "set autoindent
