@@ -56,6 +56,7 @@ NeoBundle 'git://github.com/Shougo/vimfiler.git'
 "let g:vimfiler_as_default_explorer = 1
 ",eでVimFilerの起動
 nnoremap <silent>,e :<C-u>VimFiler<CR>
+"nnoremap <silent>,e :!cd %:h<CR>:VimFilerCurrentDir<cr>
 
 NeoBundle 'git://github.com/Shougo/unite.vim.git'
 " unite.vim
