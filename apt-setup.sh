@@ -31,7 +31,7 @@ fi
 EOF
 
 #各種必要なものをインストール
-sudo apt-get install -y ntp;
+#sudo apt-get install -y ntp;
 sudo apt-get install -y vim;
 sudo apt-get install -y git;
 sudo apt-get install -y tree;
