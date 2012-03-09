@@ -131,7 +131,7 @@ filetype plugin on
 set encoding=utf-8
 "256色カラー。各種ターミナルとVimとtmuxやscreenが対応している必要がある
 set t_Co=256
-colorscheme ir_black
+colorscheme molokai
 
 "新しい行のインデントを現在行と同じにする
 "set autoindent
