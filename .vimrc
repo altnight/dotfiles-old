@@ -100,6 +100,11 @@ NeoBundle 'nginx.vim'
 "nginx.vim
 au BufRead,BufNewFile /etc/nginx/* set ft=nginx
 
+"minibuffer
+"let g:miniBufExplMapWindowNavVim = 1
+"let g:miniBufExplMapWindowNavArrows = 1
+"let g:miniBufExplMapCTabSwitchBuffs = 1
+
 "=================================================
 "colorscheme
 "=================================================
@@ -153,31 +158,34 @@ set whichwrap=b,s,h,l,<,>,[,]
 set nowrapscan
 "検索のハイライト
 set hlsearch
+
 ""ハイライトをEscで抜ける
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
+
 " 保存時に行末の空白を除去する
 autocmd BufWritePre * :%s/\s\+$//ge
 " 保存時にtabをスペースに変換する
 "autocmd BufWritePre * :%s/\t/  /ge
-"minibuffer
-"let g:miniBufExplMapWindowNavVim = 1
-"let g:miniBufExplMapWindowNavArrows = 1
-"let g:miniBufExplMapCTabSwitchBuffs = 1
 
 " カッコなどを挿入したら自動的に中へ
 inoremap {{ {}<LEFT>
-"inoremap <LEFT>
 inoremap (( ()<LEFT>
 inoremap "" ""<LEFT>
 inoremap '' ''<LEFT>
 inoremap << <><LEFT>
 inoremap {% {%<Space><Space>%}<LEFT><LEFT><LEFT>
 inoremap [[ []<LEFT>
+
 "Tabでウィンドウの移動
 nnoremap <silent><Tab> <C-w>w
+
 ">や<で幅調節
 nnoremap <silent>> <C-w>>
 nnoremap <silent>< <C-w><
+"
+"tn で新しいタブを開く。移動はgt
+nnoremap <silent>tn :<C-u>:tabnew<CR>
+
 "FileType
 "シフト移動幅
 "ファイル内の <Tab> が対応する空白の数
@@ -185,49 +193,3 @@ autocmd FileType * set tabstop=2 shiftwidth=2
 autocmd FileType javascript set tabstop=2 shiftwidth=2
 autocmd FileType html set tabstop=2 shiftwidth=2
 autocmd FileType python set tabstop=4 shiftwidth=4
-
-" unite.vim
-" 隠しファイル(.で始まるファイル)を表示するには /hoge/. と直接入力が必要
-" 入力モードで開始する
-" let g:unite_enable_start_insert=1
-" バッファ一覧
-nnoremap <silent> fb :<C-u>Unite buffer<CR>
-" ファイル一覧
-nnoremap <silent> ff :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
-" レジスタ一覧
-nnoremap <silent> fr :<C-u>Unite -buffer-name=register register<CR>
-" 最近使用したファイル一覧
-nnoremap <silent> fm :<C-u>Unite file_mru<CR>
-" 常用セット
-"nnoremap <silent> fu :<C-u>Unite buffer file_mru<CR>
-" 全部乗せ
-"jnnoremap <silent> fa :<C-u>UniteWithBufferDir -buffer-name=files buffer file_mru bookmark file<CR>
-
-""neocomplcaceh
-let g:neocomplcache_enable_at_startup = 1
-"ネオコンのスニペット展開
-imap <C-k> <Plug>(neocomplcache_snippets_expand)
-"let g:neocomplcache_dictionary_filetype_lists = {
-"   \ 'default' : '',
-"   \ 'javascript' : $HOME.'/dotfiles/vimfiles/javascript.dict' $HOME.'/dotfiles/vimfiles/jQuery.dict',
-"   \ 'html' : $HOME.'/.vim/javascript.dict',
-"   \}
-"2つの辞書を登録する
-autocmd FileType html setlocal dictionary=$HOME/dotfiles/vimfiles/javascript.dict,$HOME/dotfiles/vimfiles/jQuery.dict
-autocmd FileType javascript setlocal dictionary=$HOME/dotfiles/vimfiles/javascript.dict,$HOME/dotfiles/vimfiles/jQuery.dict
-
-"neocomplcacheのオムニ補完
-autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-
-"vimfilerをデフォルトにする
-"let g:vimfiler_as_default_explorer = 1
-",eでVimFilerの起動
-nnoremap <silent>,e :<C-u>VimFiler<CR>
-"taglist Macの /usr/bin/ctags は消すこと
-set tags=tags
-"tn で新しいタブを開く。移動はgt
-nnoremap <silent>tn :<C-u>:tabnew<CR>
