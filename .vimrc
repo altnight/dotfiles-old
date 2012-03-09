@@ -193,3 +193,6 @@ autocmd FileType * set tabstop=2 shiftwidth=2
 autocmd FileType javascript set tabstop=2 shiftwidth=2
 autocmd FileType html set tabstop=2 shiftwidth=2
 autocmd FileType python set tabstop=4 shiftwidth=4
+
+"gfでのファイル移動
+autocmd FileType html setlocal includeexpr=substitute(v:fname,'^\\/',',') | setlocal path+=;/''
