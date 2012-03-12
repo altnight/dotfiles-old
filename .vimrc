@@ -20,7 +20,11 @@ NeoBundle 'git://github.com/Shougo/neobundle.vim.git'
 "NeoBundle
 "プラグイン管理をgitベースで行う
 "install :NeoBundleInstall
+nnoremap <silent> ,nbi :<C-u>NeoBundleInstall<CR>
 "install & update :NeoBundleInstall!
+nnoremap <silent> ,nbI :<C-u>NeoBundleInstall!<CR>
+"clean :NeoBundleClean
+nnoremap <silent> ,nbc :<C-u>NeoBundleClean<CR>
 
 NeoBundle 'git://github.com/Shougo/neocomplcache.git'
 "neocomplcaceh
