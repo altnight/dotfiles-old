@@ -38,13 +38,18 @@ let g:neocomplcache_enable_at_startup = 1
 "2つの辞書を登録する
 autocmd FileType html setlocal dictionary=$HOME/dotfiles/vimfiles/javascript.dict,$HOME/dotfiles/vimfiles/jQuery.dict
 autocmd FileType javascript setlocal dictionary=$HOME/dotfiles/vimfiles/javascript.dict,$HOME/dotfiles/vimfiles/jQuery.dict
+autocmd FileType coffee setlocal dictionary=$HOME/dotfiles/vimfiles/javascript.dict,$HOME/dotfiles/vimfiles/jQuery.dict
 
 "neocomplcacheのオムニ補完
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType javascript,coffee setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+
+"coffeescript
+NeoBundle 'git://github.com/kchmck/vim-coffee-script.git'
+autocmd BufWritePost *.coffee silent CoffeeMake! -cb | cwindow | redraw!
 
 "英語補完
 "うまく動かない？
@@ -133,8 +138,9 @@ NeoBundle 'git://github.com/wgibbs/vim-irblack.git'
 syntax on
 filetype plugin on
 set encoding=utf-8
-"256色カラー。各種ターミナルとVimとtmuxやscreenが対応している必要がある
+" 256色モード
 set t_Co=256
+"256色カラーは各種ターミナルとVimとtmuxやscreenが対応している必要がある
 colorscheme molokai
 
 "新しい行のインデントを現在行と同じにする
