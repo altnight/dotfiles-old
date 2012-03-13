@@ -33,15 +33,16 @@ let g:neocomplcache_enable_at_startup = 1
 "let g:neocomplcache_dictionary_filetype_lists = {
 "   \ 'default' : '',
 "   \ 'javascript' : $HOME.'/dotfiles/vimfiles/javascript.dict' $HOME.'/dotfiles/vimfiles/jQuery.dict',
-"   \ 'html' : $HOME.'/.vim/javascript.dict',
-"   \}
+"   \ 'css' : $HOME.'/dotfiles/vimfiles/css.dict',
+"   \ }
 "2つの辞書を登録する
 autocmd FileType html setlocal dictionary=$HOME/dotfiles/vimfiles/javascript.dict,$HOME/dotfiles/vimfiles/jQuery.dict
 autocmd FileType javascript setlocal dictionary=$HOME/dotfiles/vimfiles/javascript.dict,$HOME/dotfiles/vimfiles/jQuery.dict
 autocmd FileType coffee setlocal dictionary=$HOME/dotfiles/vimfiles/javascript.dict,$HOME/dotfiles/vimfiles/jQuery.dict
+autocmd FileType css,less,sass setlocal dictionary=$HOME/dotfiles/vimfiles/css.dict
 
 "neocomplcacheのオムニ補完
-autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType css,less,sass setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript,coffee setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
@@ -63,6 +64,10 @@ let g:less_compress=0
 "less補完
 NeoBundle 'git://github.com/groenewege/vim-less.git'
 autocmd BufNewFile,BufRead *.less set filetype=css
+
+"haml Sassのインデント、色付け
+NeoBundle 'git://github.com/tpope/vim-haml.git'
+autocmd BufNewFile,BufRead *.sass set filetype=sass
 
 "英語補完
 "NOTE:うまく動かない？
@@ -229,6 +234,7 @@ autocmd FileType javascript set tabstop=2 shiftwidth=2
 autocmd FileType html set tabstop=2 shiftwidth=2
 autocmd FileType python set tabstop=4 shiftwidth=4
 autocmd FileType coffee set tabstop=4 shiftwidth=4
+autocmd FileType sass set tabstop=4 shiftwidth=4
 
 "gfでのファイル移動
 autocmd FileType html setlocal includeexpr=substitute(v:fname,'^\\/',',') | setlocal path+=;/''
