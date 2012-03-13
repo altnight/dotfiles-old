@@ -61,6 +61,6 @@ sudo easy_install pip;
 sudo pip install ipython;
 mkdir ~/venvs;
 sudo pip install virtualenv;
-suod pip install virtualenvwrapper;
+sudo pip install virtualenvwrapper;
 
 #sudo cat "tmpfs /tmp tmpfs defaults,noatime,size=378m 0 0" >> /etc/fstab
