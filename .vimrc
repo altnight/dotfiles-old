@@ -49,7 +49,7 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
 "coffeescript
 NeoBundle 'git://github.com/kchmck/vim-coffee-script.git'
-autocmd BufWritePost *.coffee silent CoffeeMake! -cb | cwindow | redraw!
+autocmd BufWritePost *.coffee silent CoffeeMake! -c | cwindow | redraw!
 
 "英語補完
 "うまく動かない？
