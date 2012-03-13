@@ -51,8 +51,21 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 NeoBundle 'git://github.com/kchmck/vim-coffee-script.git'
 autocmd BufWritePost *.coffee silent CoffeeMake! -c | cwindow | redraw!
 
+"NOTE:この順番で記述しないと補完と自動展開ができない
+"lessの自動変換
+NeoBundle 'git://github.com/plasticscafe/vim-less-autocompile.git'
+autocmd BufRead,BufNewFile *.less set filetype=less
+"自動で変換
+let g:less_autocompile=1
+"圧縮しない
+let g:less_compress=0
+
+"less補完
+NeoBundle 'git://github.com/groenewege/vim-less.git'
+autocmd BufNewFile,BufRead *.less set filetype=css
+
 "英語補完
-"うまく動かない？
+"NOTE:うまく動かない？
 NeoBundle 'https://github.com/ujihisa/neco-look.git'
 
 NeoBundle 'git://github.com/Shougo/neocomplcache-snippets-complete.git'
