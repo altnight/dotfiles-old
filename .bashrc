@@ -38,6 +38,7 @@ alias tmux='tmux -2'
 alias ta='tmux attach'
 
 alias gr='find . | xargs grep -ni $1'
+alias psgr='ps aux | grep'
 
 alias py='python'
 alias ipy='ipython'
