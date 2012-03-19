@@ -54,6 +54,7 @@ git config --global core.editor 'vim -c "set fenc=utf-8"';
 git config --global color.ui auto
 git config --global alias.st status
 git config --global alias.ci commit
+git config --global alias.co checkout
 
 #Pythonまわりの設定
 sudo apt-get install -y python-setuptools;
