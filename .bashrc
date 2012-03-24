@@ -1,11 +1,24 @@
 #PythonのVirtualenvの設定
 export WORKON_HOME=${HOME}/venvs
 #virtualenvwrapperにPATHを通す
+case "$OSTYPE" in
+    darwin*)
 source /usr/local/bin/virtualenvwrapper.sh
+;;
+    linux*)
+source /usr/local/bin/virtualenvwrapper.sh
+;;
+    cygwin*)
+source /usr/bin/virtualenvwrapper.sh
+;;
+esac
+
 #pipの設定
 export PIP_DOWNLOAD_CACHE=${HOME}/.pip_cache
 export PIP_RESPECT_VIRTUALENV=true
 export PIP_REQUIRE_VIRTUELENV=true
+
+export LANG=ja_jp.UTF-8
 
 #OS毎にlsの場合分け
 case "$OSTYPE" in
