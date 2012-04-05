@@ -50,7 +50,7 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
 "coffeescript
 NeoBundle 'git://github.com/kchmck/vim-coffee-script.git'
-autocmd BufWritePost *.coffee silent CoffeeMake! -c | cwindow | redraw!
+autocmd BufWritePost *.coffee silent CoffeeMake! -cb | cwindow | redraw!
 
 "NOTE:この順番で記述しないと補完と自動展開ができない
 "lessの自動変換

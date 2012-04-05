@@ -55,3 +55,4 @@ alias psgr='ps aux | grep'
 
 alias py='python'
 alias ipy='ipython'
+alias bpy='bpython'
