@@ -52,6 +52,10 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 NeoBundle 'git://github.com/kchmck/vim-coffee-script.git'
 autocmd BufWritePost *.coffee silent CoffeeMake! -cb | cwindow | redraw!
 
+"JScomplete
+NeoBundle 'git://github.com/teramako/jscomplete-vim.git'
+
+
 "NOTE:この順番で記述しないと補完と自動展開ができない
 "lessの自動変換
 NeoBundle 'git://github.com/plasticscafe/vim-less-autocompile.git'
