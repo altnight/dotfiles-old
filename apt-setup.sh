@@ -60,7 +60,7 @@ git config --global alias.co checkout
 sudo apt-get install -y python-setuptools;
 sudo easy_install pip;
 sudo pip install ipython;
-sudo pip install bpython;
+#sudo pip install bpython;
 mkdir ~/venvs;
 sudo pip install virtualenv;
 sudo pip install virtualenvwrapper;
