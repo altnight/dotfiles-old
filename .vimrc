@@ -13,7 +13,7 @@ if has('vim_starting')
 endif
 
 "=================================================
-"pluginの設定
+"補完、変換、展開、入力
 "=================================================
 "
 NeoBundle 'git://github.com/Shougo/neobundle.vim.git'
@@ -48,13 +48,17 @@ autocmd FileType javascript,coffee setlocal omnifunc=javascriptcomplete#Complete
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
+NeoBundle 'git://github.com/Shougo/neocomplcache-snippets-complete.git'
+"neocomplcache
+"ネオコンのスニペット展開
+imap <C-k> <Plug>(neocomplcache_snippets_expand)
+
 "coffeescript
 NeoBundle 'git://github.com/kchmck/vim-coffee-script.git'
 autocmd BufWritePost *.coffee silent CoffeeMake! -cb | cwindow | redraw!
 
 "JScomplete
 NeoBundle 'git://github.com/teramako/jscomplete-vim.git'
-
 
 "NOTE:この順番で記述しないと補完と自動展開ができない
 "lessの自動変換
@@ -69,27 +73,51 @@ let g:less_compress=0
 NeoBundle 'git://github.com/groenewege/vim-less.git'
 autocmd BufNewFile,BufRead *.less set filetype=css
 
+"英語補完
+"NOTE:うまく動かない？
+NeoBundle 'https://github.com/ujihisa/neco-look.git'
+
+NeoBundle 'taglist.vim'
+"ctags で生成した各種宣言を表示 :Tlist
+"taglist Macの /usr/bin/ctags は消すこと
+set tags=tags
+
+NeoBundle 'git://github.com/mattn/zencoding-vim.git'
+"HTMLやXMLなどの賢い展開
+let g:user_zen_expandabbr_key = '<c-e>'
+
+NeoBundle 'git://github.com/scrooloose/nerdcommenter.git'
+"NERDCommenter Toggle
+nmap ,c <Plug>NERDCommenterToggle
+vmap ,c <Plug>NERDCommenterToggle
+"=================================================
+"Syntax
+"=================================================
 "haml Sassのインデント、色付け
 NeoBundle 'git://github.com/tpope/vim-haml.git'
 
 "Markdown
 NeoBundle 'git://github.com/tpope/vim-markdown.git'
 
-"英語補完
-"NOTE:うまく動かない？
-NeoBundle 'https://github.com/ujihisa/neco-look.git'
+"nginxのsyntax
+NeoBundle 'nginx.vim'
+au BufRead,BufNewFile /etc/nginx/* set ft=nginx
 
-NeoBundle 'git://github.com/Shougo/neocomplcache-snippets-complete.git'
-"neocomplcache
-"ネオコンのスニペット展開
-imap <C-k> <Plug>(neocomplcache_snippets_expand)
+"各種構文チェックしてくれるらしい
+NeoBundle 'git://github.com/scrooloose/syntastic.git'
+
+let g:syntastic_mode_map = { 'mode': 'passive',
+                           \ 'active_filetypes': ['python', 'perl', 'ruby', 'javascript'],
+                           \ 'passive_filetypes': [] }
+"=================================================
+"Filer、参照
+"=================================================
 
 NeoBundle 'git://github.com/Shougo/vimfiler.git'
 "vimfilerをデフォルトにする
 "let g:vimfiler_as_default_explorer = 1
 ",eでVimFilerの起動
 nnoremap <silent>,e :<C-u>VimFiler<CR>
-"nnoremap <silent>,e :!cd %:h<CR>:VimFilerCurrentDir<cr>
 
 NeoBundle 'git://github.com/Shougo/unite.vim.git'
 " unite.vim
@@ -108,21 +136,10 @@ nnoremap <silent> fm :<C-u>Unite file_mru<CR>
 "nnoremap <silent> fu :<C-u>Unite buffer file_mru<CR>
 " 全部乗せ
 "jnnoremap <silent> fa :<C-u>UniteWithBufferDir -buffer-name=files buffer file_mru bookmark file<CR>
-"
-NeoBundle 'git://github.com/mattn/zencoding-vim.git'
-"HTMLやXMLなどの賢い展開
-let g:user_zen_expandabbr_key = '<c-e>'
 
-NeoBundle 'git://github.com/scrooloose/nerdcommenter.git'
-"NERDCommenter Toggle
-nmap ,c <Plug>NERDCommenterToggle
-vmap ,c <Plug>NERDCommenterToggle
-
-NeoBundle 'taglist.vim'
-"ctags で生成した各種宣言を表示 :Tlist
-"taglist Macの /usr/bin/ctags は消すこと
-set tags=tags
-
+"=================================================
+"その他
+"=================================================
 "異なるvim間でのyank共有
 NeoBundle 'yanktmp.vim'
 map <silent> sy :call YanktmpYank()<CR>
@@ -133,16 +150,6 @@ NeoBundle 'sudo.vim'
 "vi sudo:/etc/nginx/nginx.conf などと使う
 "現在開いているファイルをsudoで開くには :e sudo:%
 "
-NeoBundle 'nginx.vim'
-"nginxのsyntax
-"nginx.vim
-au BufRead,BufNewFile /etc/nginx/* set ft=nginx
-
-"minibuffer
-"let g:miniBufExplMapWindowNavVim = 1
-"let g:miniBufExplMapWindowNavArrows = 1
-"let g:miniBufExplMapCTabSwitchBuffs = 1
-
 
 "=================================================
 "colorscheme
