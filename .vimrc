@@ -72,6 +72,9 @@ autocmd BufNewFile,BufRead *.less set filetype=css
 "haml Sassのインデント、色付け
 NeoBundle 'git://github.com/tpope/vim-haml.git'
 
+"Markdown
+NeoBundle 'git://github.com/tpope/vim-markdown.git'
+
 "英語補完
 "NOTE:うまく動かない？
 NeoBundle 'https://github.com/ujihisa/neco-look.git'
