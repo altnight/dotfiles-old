@@ -96,6 +96,9 @@ vmap ,c <Plug>NERDCommenterToggle
 "haml Sassのインデント、色付け
 NeoBundle 'git://github.com/tpope/vim-haml.git'
 
+"jade
+NeoBundle 'jade.vim'
+
 "Markdown
 NeoBundle 'git://github.com/tpope/vim-markdown.git'
 
