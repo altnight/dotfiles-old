@@ -99,6 +99,9 @@ NeoBundle 'git://github.com/tpope/vim-haml.git'
 "Markdown
 NeoBundle 'git://github.com/tpope/vim-markdown.git'
 
+"Python
+NeoBundle 'pyflakes.vim'
+
 "nginxのsyntax
 NeoBundle 'nginx.vim'
 au BufRead,BufNewFile /etc/nginx/* set ft=nginx
@@ -107,7 +110,7 @@ au BufRead,BufNewFile /etc/nginx/* set ft=nginx
 NeoBundle 'git://github.com/scrooloose/syntastic.git'
 
 let g:syntastic_mode_map = { 'mode': 'passive',
-                           \ 'active_filetypes': ['python', 'perl', 'ruby', 'javascript'],
+                           \ 'active_filetypes': ['python', 'javascript'],
                            \ 'passive_filetypes': [] }
 "=================================================
 "Filer、参照
