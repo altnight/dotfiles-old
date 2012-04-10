@@ -106,6 +106,10 @@ NeoBundle 'git://github.com/kevinw/pyflakes-vim.git'
 NeoBundle 'nginx.vim'
 au BufRead,BufNewFile /etc/nginx/* set ft=nginx
 
+"JSON
+NeoBundle 'JSON.vim'
+au! BufRead,BufNewFile *.json set filetype=json
+
 "各種構文チェックしてくれるらしい
 NeoBundle 'git://github.com/scrooloose/syntastic.git'
 
