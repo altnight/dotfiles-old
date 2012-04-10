@@ -100,7 +100,7 @@ NeoBundle 'git://github.com/tpope/vim-haml.git'
 NeoBundle 'git://github.com/tpope/vim-markdown.git'
 
 "Python
-NeoBundle 'pyflakes.vim'
+NeoBundle 'git://github.com/kevinw/pyflakes-vim.git'
 
 "nginxのsyntax
 NeoBundle 'nginx.vim'
