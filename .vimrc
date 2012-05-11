@@ -147,6 +147,10 @@ nnoremap <silent> fm :<C-u>Unite file_mru<CR>
 " 全部乗せ
 "jnnoremap <silent> fa :<C-u>UniteWithBufferDir -buffer-name=files buffer file_mru bookmark file<CR>
 
+"Ack.vim
+"Macの場合 brew install ack
+":Ack patterns
+NeoBundle 'https://github.com/mileszs/ack.vim'
 "=================================================
 "その他
 "=================================================
