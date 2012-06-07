@@ -40,6 +40,7 @@ sudo apt-get install -y htop;
 sudo apt-get install -y tmux;
 sudo apt-get install -y sqlite3;
 sudo apt-get install -y ctags;
+sudo apt-get install -y pyflakes;
 
 #NeoBundleするための準備
 mkdir ~/.vim;

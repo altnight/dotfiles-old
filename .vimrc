@@ -149,8 +149,11 @@ nnoremap <silent> fm :<C-u>Unite file_mru<CR>
 
 "Ack.vim
 "Macの場合 brew install ack
+"Ubuntuの場合 sudo apt-get install ack-grep
 ":Ack patterns
 NeoBundle 'https://github.com/mileszs/ack.vim'
+"for Debian/Ubuntu
+"let g:ackprg="ack-grep -H --nocolor --nogroup --column"
 "=================================================
 "その他
 "=================================================
