@@ -169,7 +169,7 @@ NeoBundle 'sudo.vim'
 "
 
 "=================================================
-"colorscheme
+"colorschemeとか見た目とか
 "=================================================
 "molokai
 NeoBundle 'molokai'
@@ -179,6 +179,11 @@ NeoBundle 'desert.vim'
 NeoBundle 'desert256.vim'
 "ir_black
 NeoBundle 'git://github.com/wgibbs/vim-irblack.git'
+
+"ステータスラインをちょろっとする
+NeoBundle 'git://github.com/Lokaltog/vim-powerline.git'
+"ステータスラインを常に表示
+set laststatus=2
 
 "=================================================
 "通常設定"

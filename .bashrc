@@ -46,8 +46,6 @@ alias cl='clear'
 alias so='source'
 alias tarx='tar xzvf'
 alias tarc='tar czvf'
-#256色termに必要
-alias tmux='tmux -2'
 alias ta='tmux attach'
 
 alias gr='find . | xargs grep -ni $1'
@@ -56,3 +54,4 @@ alias psgr='ps aux | grep'
 alias py='python'
 alias ipy='ipython'
 alias bpy='bpython'
+export VERSIONER_PYTHON_PREFER_32_BIT=no
