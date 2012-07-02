@@ -89,5 +89,7 @@ if [ -f $BASH_COMPLETION_DIR/git ]; then
 else
     PS1="\[\033[0;37m\][\[\033[0;32m\]\t \[\033[1;36m\]\u\[\033[0;37m\]@\h \[\033[0;32m\]\w\[\033[0;37m\]]\$ "
 fi
+;;
+esac
 
 export PS1
