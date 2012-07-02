@@ -60,6 +60,7 @@ source ~/.nvm/nvm.sh
 nvm use v0.6.19
 
 #zsh
+#chpass -s /bin/zsh
 export EDITOR=/bin/vim
 
 autoload -U compinit
