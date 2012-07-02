@@ -52,10 +52,15 @@ alias gr='find . | xargs grep -ni $1'
 alias psgr='ps aux | grep'
 
 alias py='python'
-alias ipy='ipython'
 alias bpy='bpython'
 export VERSIONER_PYTHON_PREFER_32_BIT=no
 
+# for bash_completion
+if [ -f `brew --prefix`/etc/bash_completion ]; then
+  source `brew --prefix`/etc/bash_completion
+fi
+
+# brew install bash_completion
 # prompt command
 hg_branch() {
     hg branch 2> /dev/null | awk '{print "(hg:" $1 ")"}'
@@ -66,6 +71,17 @@ git_branch() {
 }
 
 # setting for prompt
+case "$OSTYPE" in
+    darwin*)
+if [ -f `brew --prefix`/etc/bash_completion ]; then
+    source `brew --prefix`/etc/bash_completion
+    echo "git-completion enabled..."
+    PS1="\[\033[0;37m\][\[\033[0;32m\]\t \[\033[1;36m\]\u\[\033[0;37m\]@\h \$(git_branch)\$(hg_branch) \[\033[0;32m\]\w\[\033[0;37m\]]\$ "
+else
+    PS1="\[\033[0;37m\][\[\033[0;32m\]\t \[\033[1;36m\]\u\[\033[0;37m\]@\h \[\033[0;32m\]\w\[\033[0;37m\]]\$ "
+fi
+;;
+    linux*)
 if [ -f $BASH_COMPLETION_DIR/git ]; then
     source $BASH_COMPLETION_DIR/git
     echo "git-completion enabled..."
