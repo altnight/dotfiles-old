@@ -12,11 +12,13 @@ source /usr/local/bin/virtualenvwrapper.sh
 source /usr/bin/virtualenvwrapper.sh
 ;;
 esac
-
 #pipの設定
 export PIP_DOWNLOAD_CACHE=${HOME}/.pip_cache
 export PIP_RESPECT_VIRTUALENV=true
 export PIP_REQUIRE_VIRTUELENV=true
+export VERSIONER_PYTHON_PREFER_32_BIT=no
+alias py='python'
+alias bpy='bpython'
 
 export LANG=ja_JP.UTF-8
 
@@ -44,16 +46,17 @@ alias lsl='ls -l'
 alias s='sudo'
 alias cl='clear'
 alias so='source'
+
 alias tarx='tar xzvf'
 alias tarc='tar czvf'
+
 alias ta='tmux attach'
+alias tumx='tmux -2'
 
 alias gr='find . | xargs grep -ni $1'
 alias psgr='ps aux | grep'
 
-alias py='python'
-alias bpy='bpython'
-export VERSIONER_PYTHON_PREFER_32_BIT=no
+alias hgb='hg pull; hg up; hg branch'
 
 # for bash_completion
 if [ -f `brew --prefix`/etc/bash_completion ]; then
