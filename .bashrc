@@ -51,12 +51,13 @@ alias tarx='tar xzvf'
 alias tarc='tar czvf'
 
 alias ta='tmux attach'
-alias tumx='tmux -2'
+alias tmux='tmux -2'
 
 alias gr='find . | xargs grep -ni $1'
 alias psgr='ps aux | grep'
 
 alias hgb='hg pull; hg up; hg branch'
+alias pyrun='python /home/altnight/booklista/app/manage.py runserver --settings=settings.altnight.base 192.168.56.101:8000'
 
 # for bash_completion
 if [ -f `brew --prefix`/etc/bash_completion ]; then
@@ -96,3 +97,14 @@ fi
 esac
 
 export PS1
+
+#crontab -r を封印する
+function crontab() {
+  for opt in "$@"; do
+    if [ "$opt" == "-r" ]; then
+      echo '-r is sealed!'
+      return 1
+    fi
+  done
+  command crontab "$@"
+}
