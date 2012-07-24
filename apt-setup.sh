@@ -60,9 +60,6 @@ git config --global alias.co checkout
 #Pythonまわりの設定
 sudo apt-get install -y python-setuptools;
 sudo easy_install pip;
-sudo pip install ipython;
-#sudo pip install bpython;
-#sudo pip install pyflakes;
 mkdir ~/venvs;
 sudo pip install virtualenv;
 sudo pip install virtualenvwrapper;
