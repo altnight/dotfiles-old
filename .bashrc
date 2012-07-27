@@ -47,6 +47,8 @@ alias s='sudo'
 alias cl='clear'
 alias so='source'
 
+alias hal='sudo shutdown -h now'
+
 alias tarx='tar xzvf'
 alias tarc='tar czvf'
 
@@ -57,7 +59,6 @@ alias gr='find . | xargs grep -ni $1'
 alias psgr='ps aux | grep'
 
 alias hgb='hg pull; hg up; hg branch'
-alias pyrun='python /home/altnight/booklista/app/manage.py runserver --settings=settings.altnight.base 192.168.56.101:8000'
 
 # for bash_completion
 if [ -f `brew --prefix`/etc/bash_completion ]; then
