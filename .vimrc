@@ -15,7 +15,7 @@ endif
 "=================================================
 "補完、変換、展開、入力
 "=================================================
-"
+
 NeoBundle 'git://github.com/Shougo/neobundle.vim.git'
 "NeoBundle
 "プラグイン管理をgitベースで行う
@@ -113,6 +113,9 @@ au BufRead,BufNewFile /etc/nginx/* set ft=nginx
 NeoBundle 'JSON.vim'
 au! BufRead,BufNewFile *.json set filetype=json
 
+"blockdiag
+NeoBundle 'git://github.com/aohta/blockdiag.vim.git'
+
 "各種構文チェックしてくれるらしい
 NeoBundle 'git://github.com/scrooloose/syntastic.git'
 
@@ -166,7 +169,9 @@ map <silent> sP :call YanktmpPaste_P()<CR>
 NeoBundle 'sudo.vim'
 "vi sudo:/etc/nginx/nginx.conf などと使う
 "現在開いているファイルをsudoで開くには :e sudo:%
-"
+
+"\r で現在開いているスクリプトを実行
+NeoBundle 'git://github.com/thinca/vim-quickrun.git'
 
 "=================================================
 "colorschemeとか見た目とか
