@@ -119,8 +119,11 @@ NeoBundle 'git://github.com/aohta/blockdiag.vim.git'
 "各種構文チェックしてくれるらしい
 NeoBundle 'git://github.com/scrooloose/syntastic.git'
 
+"python は pyflakes
+"javascript は jshint
+"html は HTML Tidy
 let g:syntastic_mode_map = { 'mode': 'passive',
-                           \ 'active_filetypes': ['python', 'javascript'],
+                           \ 'active_filetypes': ['python', 'javascript', 'html'],
                            \ 'passive_filetypes': [] }
 "=================================================
 "Filer、参照
