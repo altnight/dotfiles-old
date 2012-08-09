@@ -1,6 +1,8 @@
-#PythonのVirtualenvの設定
+# Python 起動時に ~/.pyrc.py を読み込む
+export PYTHONSTARTUP=${HOME}/.pyrc.py
+# Python の Virtualenv の設定
 export WORKON_HOME=${HOME}/venvs
-#virtualenvwrapperにPATHを通す
+# virtualenvwrapper に PATH を通す
 case "$OSTYPE" in
     darwin*)
 source /usr/local/bin/virtualenvwrapper.sh
@@ -22,7 +24,7 @@ alias bpy='bpython'
 
 export LANG=ja_JP.UTF-8
 
-#OS毎にlsの場合分け
+# OS 毎に ls の場合分け
 case "$OSTYPE" in
     darwin*)
 alias l="ls -G"
@@ -38,7 +40,7 @@ alias ls="ls --color=auto"
 ;;
 esac
 
-#各種alias
+# 各種 alias
 alias le="less"
 alias c="cd .."
 alias lsa='ls -A'
@@ -99,7 +101,7 @@ esac
 
 export PS1
 
-#crontab -r を封印する
+# crontab -r を封印する
 function crontab() {
   for opt in "$@"; do
     if [ "$opt" == "-r" ]; then
