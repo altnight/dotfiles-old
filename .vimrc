@@ -16,9 +16,9 @@ endif
 "補完、変換、展開、入力
 "=================================================
 
-NeoBundle 'git://github.com/Shougo/neobundle.vim.git'
 "NeoBundle
 "プラグイン管理をgitベースで行う
+NeoBundle 'git://github.com/Shougo/neobundle.vim.git'
 "install :NeoBundleInstall
 nnoremap <silent> ,nbi :<C-u>NeoBundleInstall<CR>
 "install & update :NeoBundleInstall!
@@ -26,21 +26,20 @@ nnoremap <silent> ,nbI :<C-u>NeoBundleInstall!<CR>
 "clean :NeoBundleClean
 nnoremap <silent> ,nbc :<C-u>NeoBundleClean<CR>
 
+"neocomplcacehe
 NeoBundle 'git://github.com/Shougo/neocomplcache.git'
-"neocomplcaceh
-"neocomplcacehを有効にする
+"neocomplcaceheを有効にする
 let g:neocomplcache_enable_at_startup = 1
-"let g:neocomplcache_dictionary_filetype_lists = {
-"   \ 'default' : '',
-"   \ 'javascript' : $HOME.'/dotfiles/vimfiles/javascript.dict' $HOME.'/dotfiles/vimfiles/jQuery.dict',
-"   \ 'css' : $HOME.'/dotfiles/vimfiles/css.dict',
-"   \ }
-"2つの辞書を登録する
-autocmd FileType html setlocal dictionary=$HOME/dotfiles/vimfiles/javascript.dict,$HOME/dotfiles/vimfiles/jQuery.dict
-autocmd FileType javascript setlocal dictionary=$HOME/dotfiles/vimfiles/javascript.dict,$HOME/dotfiles/vimfiles/jQuery.dict
-autocmd FileType coffee setlocal dictionary=$HOME/dotfiles/vimfiles/javascript.dict,$HOME/dotfiles/vimfiles/jQuery.dict
-autocmd FileType css,less,sass setlocal dictionary=$HOME/dotfiles/vimfiles/css.dict
-
+"辞書補完
+let g:neocomplcache_dictionary_filetype_lists = {
+   \ 'default' : '',
+   \ 'javascript' : $HOME.'/dotfiles/vimfiles/jsjq.dict',
+   \ 'coffee' : $HOME.'/dotfiles/vimfiles/jsjq.dict',
+   \ 'html' : $HOME.'/dotfiles/vimfiles/jsjq.dict',
+   \ 'css' : $HOME.'/dotfiles/vimfiles/css.dict',
+   \ 'less' : $HOME.'/dotfiles/vimfiles/css.dict',
+   \ 'sass' : $HOME.'/dotfiles/vimfiles/css.dict',
+   \ }
 "neocomplcacheのオムニ補完
 autocmd FileType css,less,sass setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
@@ -48,10 +47,12 @@ autocmd FileType javascript,coffee setlocal omnifunc=javascriptcomplete#Complete
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
-NeoBundle 'git://github.com/Shougo/neocomplcache-snippets-complete.git'
 "neocomplcache
 "ネオコンのスニペット展開
+NeoBundle 'git://github.com/Shougo/neocomplcache-snippets-complete.git'
 imap <C-k> <Plug>(neocomplcache_snippets_expand)
+"snippet の保管場所
+let g:neocomplcache_snippets_dir='~/dotfiles/vimfiles'
 
 "coffeescript
 NeoBundle 'git://github.com/kchmck/vim-coffee-script.git'
@@ -74,20 +75,19 @@ NeoBundle 'git://github.com/groenewege/vim-less.git'
 autocmd BufNewFile,BufRead *.less set filetype=css
 
 "英語補完
-"NOTE:うまく動かない？
 NeoBundle 'https://github.com/ujihisa/neco-look.git'
 
-NeoBundle 'taglist.vim'
 "ctags で生成した各種宣言を表示 :Tlist
 "taglist Macの /usr/bin/ctags は消すこと
+NeoBundle 'taglist.vim'
 set tags=tags
 
-NeoBundle 'git://github.com/mattn/zencoding-vim.git'
 "HTMLやXMLなどの賢い展開
+NeoBundle 'git://github.com/mattn/zencoding-vim.git'
 let g:user_zen_expandabbr_key = '<c-e>'
 
+"NERDCommenter トグルでコメント/コメントアウト
 NeoBundle 'git://github.com/scrooloose/nerdcommenter.git'
-"NERDCommenter Toggle
 nmap ,c <Plug>NERDCommenterToggle
 vmap ,c <Plug>NERDCommenterToggle
 "=================================================
@@ -129,14 +129,14 @@ let g:syntastic_mode_map = { 'mode': 'passive',
 "Filer、参照
 "=================================================
 
-NeoBundle 'git://github.com/Shougo/vimfiler.git'
 "vimfilerをデフォルトにする
+NeoBundle 'git://github.com/Shougo/vimfiler.git'
 "let g:vimfiler_as_default_explorer = 1
 ",eでVimFilerの起動
 nnoremap <silent>,e :<C-u>VimFiler<CR>
 
-NeoBundle 'git://github.com/Shougo/unite.vim.git'
 " unite.vim
+NeoBundle 'git://github.com/Shougo/unite.vim.git'
 " 隠しファイル(.で始まるファイル)を表示するには /hoge/. と直接入力が必要
 " 入力モードで開始する
 " let g:unite_enable_start_insert=1
@@ -169,9 +169,9 @@ map <silent> sy :call YanktmpYank()<CR>
 map <silent> sp :call YanktmpPaste_p()<CR>
 map <silent> sP :call YanktmpPaste_P()<CR>
 
-NeoBundle 'sudo.vim'
 "vi sudo:/etc/nginx/nginx.conf などと使う
 "現在開いているファイルをsudoで開くには :e sudo:%
+NeoBundle 'sudo.vim'
 
 "\r で現在開いているスクリプトを実行
 NeoBundle 'git://github.com/thinca/vim-quickrun.git'
