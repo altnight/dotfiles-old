@@ -103,7 +103,7 @@ NeoBundle 'jade.vim'
 NeoBundle 'git://github.com/tpope/vim-markdown.git'
 
 "Python
-NeoBundle 'git://github.com/kevinw/pyflakes-vim.git'
+NeoBundle 'mitechie/pyflakes-pathogen'
 
 "nginxのsyntax
 NeoBundle 'nginx.vim'
