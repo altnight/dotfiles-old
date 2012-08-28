@@ -64,7 +64,7 @@ setopt extended_glob
 # emacs like keybind (e.x. Ctrl-a goes to head of a line and Ctrl-e goes
 #   to end of it)
 #
-bindkey -v
+bindkey -e
 
 # historical backward/forward search with linehead string binded to ^P/^N
 #
@@ -114,7 +114,7 @@ setopt hist_no_store
 # シェルが終了しても裏ジョブに HUP シグナルを送らないようにする
 #setopt NO_hup
 # Ctrl+D では終了しないようになる（exit, logout などを使う）
-#setopt ignore_eof
+setopt ignore_eof
 # コマンドラインでも # 以降をコメントと見なす
 #setopt interactive_comments
 # メールスプール $MAIL が読まれていたらワーニングを表示する
@@ -142,7 +142,7 @@ setopt path_dirs
 # bindkey '\^' cdup
 # ctrl-w, ctrl-bキーで単語移動
 bindkey "^W" forward-word
-bindkey "^B" backward-word
+#bindkey "^B" backward-word
 
 # back-wordでの単語境界の設定
 autoload -Uz select-word-style
@@ -202,14 +202,6 @@ unset LSCOLORS
 export EDITOR=vim
 export PATH=$PATH:$HOME/local/bin:/usr/local/git/bin
 export PATH=$PATH:/sbin:/usr/local/bin
-
-expand-to-home-or-insert () {
-        if [ "$LBUFFER" = "" -o "$LBUFFER[-1]" = " " ]; then
-                LBUFFER+="~/"
-        else
-                zle self-insert
-        fi
-}
 
 # C-M-h でチートシートを表示する
 cheat-sheet () { zle -M "`cat ~/dotfiles/.zsh/cheat-sheet`" }
