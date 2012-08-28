@@ -7,7 +7,7 @@ precmd() {
 }
 autoload colors
 colors
-PROMPT="%{${fg[blue]}%}[%n@%m %~${fg[yellow]}%1v${reset_color}] "
+PROMPT="%{${fg[blue]}%}[%n@%m %~${fg[yellow]}%1v${fg[blue]}]${reset_color} "
 
 ## LANG
 export LANG=ja_JP.UTF-8
