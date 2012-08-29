@@ -29,7 +29,7 @@
     "bitwise"       : true,     // Prohibit bitwise operators (&, |, ^, etc.).
     "curly"         : true,     // Require {} for every new block or scope.
     "eqeqeq"        : true,     // Require triple equals i.e. `===`.
-    "forin"         : true,     // Tolerate `for in` loops without `hasOwnPrototype`.
+    "forin"         : false,     // Tolerate `for in` loops without `hasOwnPrototype`.
     "immed"         : true,     // Require immediate invocations to be wrapped in parens e.g. `( function(){}() );`
     "latedef"       : true,     // Prohibit variable use before definition.
     "newcap"        : true,     // Require capitalization of all constructor functions e.g. `new F()`.
@@ -82,7 +82,7 @@
 
     "browser"       : true,     // Standard browser globals e.g. `window`, `document`.
     "couch"         : false,    // Enable globals exposed by CouchDB.
-    "devel"         : false,    // Allow development statements e.g. `console.log();`.
+    "devel"         : true,    // Allow development statements e.g. `console.log();`.
     "dojo"          : false,    // Enable globals exposed by Dojo Toolkit.
     "jquery"        : false,    // Enable globals exposed by jQuery JavaScript library.
     "mootools"      : false,    // Enable globals exposed by MooTools JavaScript framework.
@@ -115,5 +115,5 @@
         //"anotherCoolGlobal",
         //"iLoveDouglas"
     ],
-    "indent"        : 4         // Specify indentation spacing
+    "indent"        : 2         // Specify indentation spacing
 }
