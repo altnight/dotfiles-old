@@ -15,7 +15,6 @@ endif
 "=================================================
 "補完、変換、展開、入力
 "=================================================
-
 "NeoBundle
 "プラグイン管理をgitベースで行う
 NeoBundle 'git://github.com/Shougo/neobundle.vim.git'
@@ -53,6 +52,11 @@ NeoBundle 'git://github.com/Shougo/neocomplcache-snippets-complete.git'
 imap <C-k> <Plug>(neocomplcache_snippets_expand)
 "snippet の保管場所
 let g:neocomplcache_snippets_dir='~/dotfiles/vimfiles'
+
+" ()[]{}""''などを挿入したら自動的に中へ
+NeoBundle 'git://github.com/kana/vim-smartinput.git'
+inoremap << <><LEFT>
+inoremap {% {%<Space><Space>%}<LEFT><LEFT><LEFT>
 
 "coffeescript
 NeoBundle 'git://github.com/kchmck/vim-coffee-script.git'
@@ -249,15 +253,6 @@ nmap <Esc><Esc> :nohlsearch<CR><Esc>
 autocmd BufWritePre * :%s/\s\+$//ge
 " 保存時にtabをスペースに変換する
 "autocmd BufWritePre * :%s/\t/  /ge
-
-" カッコなどを挿入したら自動的に中へ
-inoremap {{ {}<LEFT>
-inoremap (( ()<LEFT>
-inoremap "" ""<LEFT>
-inoremap '' ''<LEFT>
-inoremap << <><LEFT>
-inoremap {% {%<Space><Space>%}<LEFT><LEFT><LEFT>
-inoremap [[ []<LEFT>
 
 "Tabでウィンドウの移動
 nnoremap <silent><Tab> <C-w>w
