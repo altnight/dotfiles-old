@@ -58,6 +58,9 @@ NeoBundle 'git://github.com/kana/vim-smartinput.git'
 inoremap << <><LEFT>
 inoremap {% {%<Space><Space>%}<LEFT><LEFT><LEFT>
 
+" template
+autocmd BufNewFile *.py 0r $HOME/dotfiles/vimfiles/templates.py
+
 "coffeescript
 NeoBundle 'git://github.com/kchmck/vim-coffee-script.git'
 autocmd BufWritePost *.coffee silent CoffeeMake! -cb | cwindow | redraw!
