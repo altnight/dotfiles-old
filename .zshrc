@@ -300,7 +300,6 @@ alias c="cd .."
 alias lsa='ls -A'
 alias lsl='ls -l'
 alias s='sudo'
-alias cl='clear'
 alias so='source'
 
 alias hal='sudo shutdown -h now'
@@ -315,6 +314,8 @@ alias gr='find . | xargs grep -ni $1'
 alias psgr='ps aux | grep'
 
 alias hgb='hg pull; hg up; hg branch'
+
+alias g='git'
 
 # crontab -r を封印する
 function crontab() {
