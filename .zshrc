@@ -315,7 +315,7 @@ alias psgr='ps aux | grep'
 
 alias hgb='hg pull; hg up; hg branch'
 
-alias g='git'
+alias gi='git'
 
 # crontab -r を封印する
 function crontab() {

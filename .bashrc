@@ -61,7 +61,7 @@ alias psgr='ps aux | grep'
 
 alias hgb='hg pull; hg up; hg branch'
 
-alias g='git'
+alias gi='git'
 
 # for bash_completion
 if [ -f `brew --prefix`/etc/bash_completion ]; then
