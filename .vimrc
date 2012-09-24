@@ -50,6 +50,7 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 "ネオコンのスニペット展開
 NeoBundle 'git://github.com/Shougo/neocomplcache-snippets-complete.git'
 imap <C-k> <Plug>(neocomplcache_snippets_expand)
+smap <C-k> <Plug>(neocomplcache_snippets_expand)
 "snippet の保管場所
 let g:neocomplcache_snippets_dir='~/dotfiles/vimfiles'
 
