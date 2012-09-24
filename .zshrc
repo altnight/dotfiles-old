@@ -289,4 +289,7 @@ function crontab() {
   command crontab "$@"
 }
 
+[ -f ~/dotfiles/.zshrc.alias ] && source ~/dotfiles/.zshrc.alias
+[ -f ~/.zshrc.local ] && source ~/.zshrc.local
+
 [[ -s /etc/profile.d/autojump.zsh ]] && source /etc/profile.d/autojump.zsh
