@@ -278,45 +278,6 @@ alias bpy='bpython'
 
 export LANG=ja_JP.UTF-8
 
-# OS 毎に ls の場合分け
-case "$OSTYPE" in
-    darwin*)
-alias l="ls -G"
-alias ls="ls -G"
-;;
-    linux*)
-alias l="ls --color=auto"
-alias ls="ls --color=auto"
-;;
-    cygwin*)
-alias l="ls --color=auto"
-alias ls="ls --color=auto"
-;;
-esac
-
-# 各種 alias
-alias le="less"
-alias c="cd .."
-alias lsa='ls -A'
-alias lsl='ls -l'
-alias s='sudo'
-alias so='source'
-
-alias hal='sudo shutdown -h now'
-
-alias tarx='tar xzvf'
-alias tarc='tar czvf'
-
-alias ta='tmux attach'
-alias tmux='tmux -2'
-
-alias gr='find . | xargs grep -ni $1'
-alias psgr='ps aux | grep'
-
-alias hgb='hg pull; hg up; hg branch'
-
-alias gi='git'
-
 # crontab -r を封印する
 function crontab() {
   for opt in "$@"; do
