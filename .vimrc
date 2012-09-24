@@ -12,6 +12,7 @@ if has('vim_starting')
   call neobundle#rc(expand('~/.vim'))
 endif
 
+let OSTYPE = system("uname")
 "=================================================
 "補完、変換、展開、入力
 "=================================================
@@ -167,7 +168,9 @@ nnoremap <silent> fm :<C-u>Unite file_mru<CR>
 ":Ack patterns
 NeoBundle 'https://github.com/mileszs/ack.vim'
 "for Debian/Ubuntu
-"let g:ackprg="ack-grep -H --nocolor --nogroup --column"
+if OSTYPE == "Linux\n"
+  let g:ackprg="ack-grep -H --nocolor --nogroup --column"
+endif
 "=================================================
 "その他
 "=================================================
