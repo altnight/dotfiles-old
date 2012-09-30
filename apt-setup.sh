@@ -31,7 +31,7 @@ fi
 EOF
 
 #各種必要なものをインストール
-#sudo apt-get install -y ntp;
+sudo apt-get install -y ntp;
 sudo apt-get install -y vim;
 sudo apt-get install -y git;
 sudo apt-get install -y tree;
@@ -40,7 +40,6 @@ sudo apt-get install -y htop;
 sudo apt-get install -y tmux;
 sudo apt-get install -y sqlite3;
 sudo apt-get install -y ctags;
-#sudo apt-get install -y pyflakes;
 
 #NeoBundleするための準備
 mkdir ~/.vim;
@@ -59,8 +58,7 @@ git config --global alias.co checkout
 git config --global alias.d diff
 
 #Pythonまわりの設定
-sudo apt-get install -y python-setuptools;
-sudo easy_install pip;
+sudo apt-get install -y python-pip;
 mkdir ~/venvs;
 sudo pip install virtualenv;
 sudo pip install virtualenvwrapper;
