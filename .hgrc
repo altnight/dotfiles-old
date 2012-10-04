@@ -1,6 +1,7 @@
 [ui]
 username = altnight
 editor = /usr/bin/vi
+merge = vimdiff
 
 [extensions]
 color =
