@@ -134,15 +134,16 @@ NeoBundle 'git://github.com/scrooloose/syntastic.git'
 let g:syntastic_mode_map = { 'mode': 'passive',
                            \ 'active_filetypes': ['python', 'javascript', 'html'],
                            \ 'passive_filetypes': [] }
-"=================================================
-"Filer、参照
-"=================================================
+" =================================================
+" Filer、参照
+" =================================================
 
-"vimfilerをデフォルトにする
+" VimFiler
 NeoBundle 'git://github.com/Shougo/vimfiler.git'
-"let g:vimfiler_as_default_explorer = 1
-",eでVimFilerの起動
-nnoremap <silent>,e :<C-u>VimFiler<CR>
+" vimfilerをデフォルトにしない
+let g:vimfiler_as_default_explorer = 0
+" ,eでVimFilerの起動
+nnoremap <silent>,e :<C-u>VimFilerBufferDir<CR>
 
 " unite.vim
 NeoBundle 'git://github.com/Shougo/unite.vim.git'
@@ -157,17 +158,13 @@ nnoremap <silent> ff :<C-u>UniteWithBufferDir -buffer-name=dotfiles file<CR>
 nnoremap <silent> fr :<C-u>Unite -buffer-name=register register<CR>
 " 最近使用したファイル一覧
 nnoremap <silent> fm :<C-u>Unite file_mru<CR>
-" 常用セット
-"nnoremap <silent> fu :<C-u>Unite buffer file_mru<CR>
-" 全部乗せ
-"jnnoremap <silent> fa :<C-u>UniteWithBufferDir -buffer-name=files buffer file_mru bookmark file<CR>
 
-"Ack.vim
-"Macの場合 brew install ack
-"Ubuntuの場合 sudo apt-get install ack-grep
-":Ack patterns
+" Ack.vim
+" Macの場合 brew install ack
+" Ubuntuの場合 sudo apt-get install ack-grep
+" :Ack patterns
 NeoBundle 'https://github.com/mileszs/ack.vim'
-"for Debian/Ubuntu
+" for Debian/Ubuntu
 if OSTYPE == "Linux\n"
   let g:ackprg="ack-grep -H --nocolor --nogroup --column"
 endif
