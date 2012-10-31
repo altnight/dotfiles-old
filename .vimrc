@@ -49,11 +49,11 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
 "neocomplcache
 "ネオコンのスニペット展開
-NeoBundle 'git://github.com/Shougo/neocomplcache-snippets-complete.git'
-imap <C-k> <Plug>(neocomplcache_snippets_expand)
-smap <C-k> <Plug>(neocomplcache_snippets_expand)
+NeoBundle 'git://github.com/Shougo/neosnippet.git'
+imap <C-k> <Plug>(neosnippet_expand_or_jump)
+smap <C-k> <Plug>(neosnippet_expand_or_jump)
 "snippet の保管場所
-let g:neocomplcache_snippets_dir='~/dotfiles/vimfiles'
+let g:neosnippet#snippets_directory='~/dotfiles/vimfiles'
 
 " ()[]{}""''などを挿入したら自動的に中へ
 NeoBundle 'git://github.com/kana/vim-smartinput.git'
