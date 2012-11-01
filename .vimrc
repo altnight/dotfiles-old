@@ -1,9 +1,9 @@
-"=================================================
-"NeoBundleでの初期設定"
-"=================================================
-"NeoBundleの初期設定
-"mkdir ~/.bundle
-"NeoBundleは git clone git://github.com/Shougo/neobundle.vim.git ~/.vim/neobundle.vim しておく
+" =================================================
+" NeoBundleでの初期設定"
+" =================================================
+" NeoBundleの初期設定
+" mkdir ~/.bundle
+" NeoBundleは git clone git://github.com/Shougo/neobundle.vim.git ~/.vim/neobundle.vim しておく
 set nocompatible
 filetype off
 if has('vim_starting')
@@ -13,24 +13,24 @@ if has('vim_starting')
 endif
 
 let OSTYPE = system("uname")
-"=================================================
-"補完、変換、展開、入力
-"=================================================
-"NeoBundle
-"プラグイン管理をgitベースで行う
+" =================================================
+" 補完、変換、展開、入力
+" =================================================
+" NeoBundle
+" プラグイン管理をgitベースで行う
 NeoBundle 'git://github.com/Shougo/neobundle.vim.git'
-"install :NeoBundleInstall
+" install :NeoBundleInstall
 nnoremap <silent> ,nbi :<C-u>NeoBundleInstall<CR>
-"install & update :NeoBundleInstall!
+" install & update :NeoBundleInstall!
 nnoremap <silent> ,nbI :<C-u>NeoBundleInstall!<CR>
-"clean :NeoBundleClean
+" clean :NeoBundleClean
 nnoremap <silent> ,nbc :<C-u>NeoBundleClean<CR>
 
-"neocomplcacehe
+" neocomplcacehe
 NeoBundle 'git://github.com/Shougo/neocomplcache.git'
-"neocomplcaceheを有効にする
+" neocomplcaceheを有効にする
 let g:neocomplcache_enable_at_startup = 1
-"辞書補完
+" 辞書補完
 let g:neocomplcache_dictionary_filetype_lists = {
    \ 'default' : '',
    \ 'javascript' : $HOME.'/dotfiles/vimfiles/jsjq.dict',
@@ -40,19 +40,19 @@ let g:neocomplcache_dictionary_filetype_lists = {
    \ 'less' : $HOME.'/dotfiles/vimfiles/css.dict',
    \ 'sass' : $HOME.'/dotfiles/vimfiles/css.dict',
    \ }
-"neocomplcacheのオムニ補完
+" neocomplcacheのオムニ補完
 autocmd FileType css,less,sass setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript,coffee setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
-"neocomplcache
-"ネオコンのスニペット展開
+" neocomplcache
+" ネオコンのスニペット展開
 NeoBundle 'git://github.com/Shougo/neosnippet.git'
 imap <C-k> <Plug>(neosnippet_expand_or_jump)
 smap <C-k> <Plug>(neosnippet_expand_or_jump)
-"snippet の保管場所
+" snippet の保管場所
 let g:neosnippet#snippets_directory='~/dotfiles/vimfiles'
 
 " ()[]{}""''などを挿入したら自動的に中へ
@@ -63,74 +63,74 @@ inoremap {% {%<Space><Space>%}<LEFT><LEFT><LEFT>
 " template
 autocmd BufNewFile *.py 0r $HOME/dotfiles/vimfiles/templates.py
 
-"coffeescript
+" coffeescript
 NeoBundle 'git://github.com/kchmck/vim-coffee-script.git'
 autocmd BufWritePost *.coffee silent CoffeeMake! -cb | cwindow | redraw!
 
-"JScomplete
+" JScomplete
 NeoBundle 'git://github.com/teramako/jscomplete-vim.git'
 
-"NOTE:この順番で記述しないと補完と自動展開ができない
-"lessの自動変換
+" NOTE:この順番で記述しないと補完と自動展開ができない
+" lessの自動変換
 NeoBundle 'git://github.com/plasticscafe/vim-less-autocompile.git'
 autocmd BufRead,BufNewFile *.less set filetype=less
-"自動で変換
+" 自動で変換
 let g:less_autocompile=1
-"圧縮しない
+" 圧縮しない
 let g:less_compress=0
 
-"less補完
+" less補完
 NeoBundle 'git://github.com/groenewege/vim-less.git'
 autocmd BufNewFile,BufRead *.less set filetype=css
 
-"英語補完
+" 英語補完
 NeoBundle 'https://github.com/ujihisa/neco-look.git'
 
-"ctags で生成した各種宣言を表示 :Tlist
-"taglist Macの /usr/bin/ctags は消すこと
+" ctags で生成した各種宣言を表示 :Tlist
+" taglist Macの /usr/bin/ctags は消すこと
 NeoBundle 'taglist.vim'
 set tags=tags
 
-"HTMLやXMLなどの賢い展開
+" HTMLやXMLなどの賢い展開
 NeoBundle 'git://github.com/mattn/zencoding-vim.git'
 let g:user_zen_expandabbr_key = '<c-e>'
 
-"NERDCommenter トグルでコメント/コメントアウト
+" NERDCommenter トグルでコメント/コメントアウト
 NeoBundle 'git://github.com/scrooloose/nerdcommenter.git'
 nmap ,c <Plug>NERDCommenterToggle
 vmap ,c <Plug>NERDCommenterToggle
-"=================================================
-"Syntax
-"=================================================
-"haml Sassのインデント、色付け
+" =================================================
+" Syntax
+" =================================================
+" haml Sassのインデント、色付け
 NeoBundle 'git://github.com/tpope/vim-haml.git'
 
-"jade
+" jade
 NeoBundle 'jade.vim'
 
-"Markdown
+" Markdown
 NeoBundle 'git://github.com/tpope/vim-markdown.git'
 
-"Python
+" Python
 NeoBundle 'mitechie/pyflakes-pathogen'
 
-"nginxのsyntax
+" nginxのsyntax
 NeoBundle 'nginx.vim'
 au BufRead,BufNewFile /etc/nginx/* set ft=nginx
 
-"JSON
+" JSON
 NeoBundle 'JSON.vim'
 au! BufRead,BufNewFile *.json set filetype=json
 
-"blockdiag
+" blockdiag
 NeoBundle 'git://github.com/aohta/blockdiag.vim.git'
 
-"各種構文チェックしてくれるらしい
+" 各種構文チェックしてくれるらしい
 NeoBundle 'git://github.com/scrooloose/syntastic.git'
 
-"python は pyflakes
-"javascript は jshint
-"html は HTML Tidy
+" python は pyflakes
+" javascript は jshint
+" html は HTML Tidy
 let g:syntastic_mode_map = { 'mode': 'passive',
                            \ 'active_filetypes': ['python', 'javascript', 'html'],
                            \ 'passive_filetypes': [] }
@@ -168,109 +168,109 @@ NeoBundle 'https://github.com/mileszs/ack.vim'
 if OSTYPE == "Linux\n"
   let g:ackprg="ack-grep -H --nocolor --nogroup --column"
 endif
-"=================================================
-"その他
-"=================================================
-"異なるvim間でのyank共有
+" =================================================
+" その他
+" =================================================
+" 異なるvim間でのyank共有
 NeoBundle 'yanktmp.vim'
 map <silent> sy :call YanktmpYank()<CR>
 map <silent> sp :call YanktmpPaste_p()<CR>
 map <silent> sP :call YanktmpPaste_P()<CR>
 
-"vi sudo:/etc/nginx/nginx.conf などと使う
-"現在開いているファイルをsudoで開くには :e sudo:%
+" vi sudo:/etc/nginx/nginx.conf などと使う
+" 現在開いているファイルをsudoで開くには :e sudo:%
 NeoBundle 'sudo.vim'
 
-"\r で現在開いているスクリプトを実行
+" \r で現在開いているスクリプトを実行
 NeoBundle 'git://github.com/thinca/vim-quickrun.git'
 
-"=================================================
-"colorschemeとか見た目とか
-"=================================================
-"molokai
+" =================================================
+" colorschemeとか見た目とか
+" =================================================
+" molokai
 NeoBundle 'molokai'
-"desert
+" desert
 NeoBundle 'desert.vim'
-"desert256
+" desert256
 NeoBundle 'desert256.vim'
-"ir_black
+" ir_black
 NeoBundle 'git://github.com/wgibbs/vim-irblack.git'
 
-"ステータスラインをちょろっとする
+" ステータスラインをちょろっとする
 NeoBundle 'git://github.com/Lokaltog/vim-powerline.git'
-"ステータスラインを常に表示
+" ステータスラインを常に表示
 set laststatus=2
 
-"=================================================
-"通常設定"
-"=================================================
+" =================================================
+" 通常設定
+" =================================================
 syntax on
 filetype plugin on
 set encoding=utf-8
 " 256色モード
 set t_Co=256
-"256色カラーは各種ターミナルとVimとtmuxやscreenが対応している必要がある
+" 256色カラーは各種ターミナルとVimとtmuxやscreenが対応している必要がある
 colorscheme molokai
 
-"新しい行のインデントを現在行と同じにする
-"set autoindent
-"ファイル保存ダイアログの初期ディレクトリをバッファファイル位置に設定
+" 新しい行のインデントを現在行と同じにする
+" set autoindent
+" ファイル保存ダイアログの初期ディレクトリをバッファファイル位置に設定
 set browsedir=buffer
-"クリップボードをWindowsと連携
+" クリップボードをWindowsと連携
 set clipboard=unnamed
-"Vi互換をオフ
+" Vi互換をオフ
 set nocompatible
-"スワップファイルをつくらない
+" スワップファイルをつくらない
 set noswapfile
 set nobackup
-"タブの代わりに空白文字を挿入する
+" タブの代わりに空白文字を挿入する
 set expandtab
-"変更中のファイルでも、保存しないで他のファイルを表示
+" 変更中のファイルでも、保存しないで他のファイルを表示
 set hidden
-"インクリメンタルサーチを行う
+" インクリメンタルサーチを行う
 set incsearch
-"タブ文字、行末など不可視文字を表示する
+" タブ文字、行末など不可視文字を表示する
 set list
-"listで表示される文字のフォーマットを指定する
+" listで表示される文字のフォーマットを指定する
 set listchars=eol:$,tab:>\ ,extends:<
-"行番号を表示する
+" 行番号を表示する
 set number
-"閉じ括弧が入力されたとき、対応する括弧を表示する
+" 閉じ括弧が入力されたとき、対応する括弧を表示する
 set showmatch
-"検索時に大文字を含んでいたら大/小を区別
+" 検索時に大文字を含んでいたら大/小を区別
 set smartcase
-"新しい行を作ったときに高度な自動インデントを行う
+" 新しい行を作ったときに高度な自動インデントを行う
 set smartindent
-"行頭の余白内で Tab を打ち込むと、'shiftwidth' の数だけインデントする。
+" 行頭の余白内で Tab を打ち込むと、'shiftwidth' の数だけインデントする。
 set smarttab
-"カーソルを行頭、行末で止まらないようにする
+" カーソルを行頭、行末で止まらないようにする
 set whichwrap=b,s,h,l,<,>,[,]
-"検索をファイルの先頭へループしない
+" 検索をファイルの先頭へループしない
 set nowrapscan
-"検索のハイライト
+" 検索のハイライト
 set hlsearch
 
-""ハイライトをEscで抜ける
+" ハイライトをEscで抜ける
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
 
 " 保存時に行末の空白を除去する
 autocmd BufWritePre * :%s/\s\+$//ge
 " 保存時にtabをスペースに変換する
-"autocmd BufWritePre * :%s/\t/  /ge
+" autocmd BufWritePre * :%s/\t/  /ge
 
-"Tabでウィンドウの移動
+" Tabでウィンドウの移動
 nnoremap <silent><Tab> <C-w>w
 
-">や<で幅調節
+" >や<で幅調節
 nnoremap <silent>> <C-w>>
 nnoremap <silent>< <C-w><
 "
-"tn で新しいタブを開く。移動はgt
+" tn で新しいタブを開く。移動はgt
 nnoremap <silent>tn :<C-u>:tabnew<CR>
 
-"FileType
-"シフト移動幅
-"ファイル内の <Tab> が対応する空白の数
+" FileType
+" シフト移動幅
+" ファイル内の <Tab> が対応する空白の数
 autocmd FileType * set tabstop=2 shiftwidth=2
 autocmd FileType javascript set tabstop=2 shiftwidth=2
 autocmd FileType html set tabstop=2 shiftwidth=2
@@ -278,5 +278,5 @@ autocmd FileType python set tabstop=4 shiftwidth=4
 autocmd FileType coffee set tabstop=4 shiftwidth=4
 autocmd FileType sass set tabstop=4 shiftwidth=4
 
-"gfでのファイル移動
+" gfでのファイル移動
 autocmd FileType html setlocal includeexpr=substitute(v:fname,'^\\/',',') | setlocal path+=;/''
