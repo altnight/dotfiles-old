@@ -142,6 +142,7 @@ let g:syntastic_mode_map = { 'mode': 'passive',
 NeoBundle 'git://github.com/Shougo/vimfiler.git'
 " vimfilerをデフォルトにしない
 let g:vimfiler_as_default_explorer = 0
+let g:vimfiler_safe_mode_by_default = 0
 " ,eでVimFilerの起動
 nnoremap <silent>,e :<C-u>VimFilerBufferDir<CR>
 
