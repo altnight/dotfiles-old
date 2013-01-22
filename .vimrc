@@ -16,6 +16,7 @@ let OSTYPE = system("uname")
 " =================================================
 " 補完、変換、展開、入力
 " =================================================
+
 " NeoBundle
 " プラグイン管理をgitベースで行う
 NeoBundle 'git://github.com/Shougo/neobundle.vim.git'
@@ -33,9 +34,6 @@ let g:neocomplcache_enable_at_startup = 1
 " 辞書補完
 let g:neocomplcache_dictionary_filetype_lists = {
    \ 'default' : '',
-   \ 'javascript' : $HOME.'/dotfiles/vimfiles/jsjq.dict',
-   \ 'coffee' : $HOME.'/dotfiles/vimfiles/jsjq.dict',
-   \ 'html' : $HOME.'/dotfiles/vimfiles/jsjq.dict',
    \ 'css' : $HOME.'/dotfiles/vimfiles/css.dict',
    \ 'less' : $HOME.'/dotfiles/vimfiles/css.dict',
    \ 'sass' : $HOME.'/dotfiles/vimfiles/css.dict',
@@ -43,7 +41,6 @@ let g:neocomplcache_dictionary_filetype_lists = {
 " neocomplcacheのオムニ補完
 autocmd FileType css,less,sass setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-autocmd FileType javascript,coffee setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
@@ -69,6 +66,8 @@ autocmd BufWritePost *.coffee silent CoffeeMake! -cb | cwindow | redraw!
 
 " JScomplete
 NeoBundle 'git://github.com/teramako/jscomplete-vim.git'
+autocmd FileType javascript setlocal omnifunc=jscomplete#CompleteJS
+let g:jscomplete_use = ['dom']
 
 " NOTE:この順番で記述しないと補完と自動展開ができない
 " lessの自動変換
@@ -132,7 +131,7 @@ NeoBundle 'git://github.com/scrooloose/syntastic.git'
 " javascript は jshint
 " html は HTML Tidy
 let g:syntastic_mode_map = { 'mode': 'passive',
-                           \ 'active_filetypes': ['python', 'javascript', 'html'],
+                           \ 'active_filetypes': ['python', 'javascript'],
                            \ 'passive_filetypes': [] }
 " =================================================
 " Filer、参照

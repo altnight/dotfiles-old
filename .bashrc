@@ -1,8 +1,7 @@
-# Python 起動時に ~/.pyrc.py を読み込む
 export PYTHONSTARTUP=${HOME}/.pyrc.py
-# Python の Virtualenv の設定
+# python virtualenv
 export WORKON_HOME=${HOME}/venvs
-# virtualenvwrapper に PATH を通す
+# python virtualenvwrapper
 case "$OSTYPE" in
     darwin*)
 source /usr/local/bin/virtualenvwrapper.sh
@@ -14,7 +13,7 @@ source /usr/local/bin/virtualenvwrapper.sh
 source /usr/bin/virtualenvwrapper.sh
 ;;
 esac
-#pipの設定
+# python install pip
 export PIP_DOWNLOAD_CACHE=${HOME}/.pip_cache
 export PIP_RESPECT_VIRTUALENV=true
 export PIP_REQUIRE_VIRTUELENV=true
@@ -24,7 +23,6 @@ alias bpy='bpython'
 
 export LANG=ja_JP.UTF-8
 
-# OS 毎に ls の場合分け
 case "$OSTYPE" in
     darwin*)
 alias l="ls -G"
@@ -40,7 +38,7 @@ alias ls="ls --color=auto"
 ;;
 esac
 
-# 各種 alias
+# alias
 alias le="less"
 alias c="cd .."
 alias lsa='ls -A'
@@ -102,7 +100,7 @@ esac
 
 export PS1
 
-# crontab -r を封印する
+# crontab -r freeze
 function crontab() {
   for opt in "$@"; do
     if [ "$opt" == "-r" ]; then
@@ -112,3 +110,7 @@ function crontab() {
   done
   command crontab "$@"
 }
+
+export PATH=/Users/altnight/work/a/Sencha/Cmd/3.0.0.250:$PATH
+
+export SENCHA_CMD_3_0_0="/Users/altnight/work/a/Sencha/Cmd/3.0.0.250"
