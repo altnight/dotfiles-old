@@ -231,8 +231,8 @@ set hidden
 set incsearch
 " タブ文字、行末など不可視文字を表示する
 set list
-" listで表示される文字のフォーマットを指定する
-set listchars=eol:$,tab:>\ ,extends:<
+" タブ文字を表示。行末(eol)は非表示
+set listchars=tab:>\
 " 行番号を表示する
 set number
 " 閉じ括弧が入力されたとき、対応する括弧を表示する
