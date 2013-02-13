@@ -117,10 +117,6 @@ NeoBundle 'mitechie/pyflakes-pathogen'
 NeoBundle 'nginx.vim'
 au BufRead,BufNewFile /etc/nginx/* set ft=nginx
 
-" JSON
-NeoBundle 'JSON.vim'
-au! BufRead,BufNewFile *.json set filetype=json
-
 " blockdiag
 NeoBundle 'git://github.com/aohta/blockdiag.vim.git'
 
