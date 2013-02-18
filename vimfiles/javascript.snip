@@ -1,7 +1,12 @@
 snippet     log
 abbr        console.log(arg);
 prev_word   '^'
-  console.log(${1});
+  console.log(${1:#arg});
+
+snippet     llog
+abbr        console.log(label + arg);
+prev_word   '^'
+  console.log("${1:#label}: " + ${2:#arg});
 
 snippet     debugger
 abbr        debugger
