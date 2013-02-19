@@ -17,6 +17,7 @@ let OSTYPE = system("uname")
 " 補完、変換、展開、入力
 " =================================================
 
+
 " NeoBundle
 " プラグイン管理をgitベースで行う
 NeoBundle 'git://github.com/Shougo/neobundle.vim.git'
@@ -208,8 +209,13 @@ NeoBundle "git://github.com/nathanaelkane/vim-indent-guides.git"
 let g:indent_guides_enable_on_vim_startup = 1
 " 手動で色設定
 let g:indent_guides_auto_colors = 0
-autocmd VimEnter,Colorscheme * : hi IndentGuidesOdd  ctermbg=236
-autocmd VimEnter,Colorscheme * : hi IndentGuidesEven ctermbg=black
+autocmd VimEnter,Colorscheme * : highlight IndentGuidesOdd  ctermbg=236
+autocmd VimEnter,Colorscheme * : highlight IndentGuidesEven ctermbg=black
+
+" カレント行ハイライト
+set cursorline
+" アンダーラインをひく
+autocmd VimEnter,ColorScheme * : highlight CursorLine cterm=underline ctermbg=234
 
 filetype plugin indent on
 
