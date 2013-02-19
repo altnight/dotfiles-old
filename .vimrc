@@ -70,6 +70,16 @@ NeoBundle 'git://github.com/teramako/jscomplete-vim.git'
 autocmd FileType javascript setlocal omnifunc=jscomplete#CompleteJS
 let g:jscomplete_use = ['dom']
 
+" python virtualenv
+NeoBundle "git://github.com/jmcantrell/vim-virtualenv.git"
+
+" python jedi
+" jedi-vim 内で git submodule update --init すること
+" virtualenv.vim で pip install したはずだけどうまくいかない？
+NeoBundle "git://github.com/davidhalter/jedi-vim.git"
+" quickrun とリネーム機能のバッティングを回避
+let g:jedi#rename_command = "<leader>??????"
+
 " NOTE:この順番で記述しないと補完と自動展開ができない
 " lessの自動変換
 NeoBundle 'git://github.com/plasticscafe/vim-less-autocompile.git'

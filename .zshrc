@@ -199,9 +199,9 @@ alias where="command -v"
 # http://journal.mycom.co.jp/column/zsh/009/index.html
 unset LSCOLORS
 
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin
+export PATH=$HOME/local/bin:/usr/local/git/bin:/sbin:$PATH
 export EDITOR=vim
-export PATH=$PATH:$HOME/local/bin:/usr/local/git/bin
-export PATH=$PATH:/sbin:/usr/local/bin
 
 # C-M-h でチートシートを表示する
 cheat-sheet () { zle -M "`cat ~/dotfiles/.zsh/cheat-sheet`" }
