@@ -197,16 +197,28 @@ NeoBundle 'git://github.com/Lokaltog/vim-powerline.git'
 " ステータスラインを常に表示
 set laststatus=2
 
+" 256色モード
+set t_Co=256
+" 256色カラーは各種ターミナルとVimとtmuxやscreenが対応している必要がある
+colorscheme molokai
+
+" インデントに色付け
+NeoBundle "git://github.com/nathanaelkane/vim-indent-guides.git"
+" 起動時から使用
+let g:indent_guides_enable_on_vim_startup = 1
+" 手動で色設定
+let g:indent_guides_auto_colors = 0
+autocmd VimEnter,Colorscheme * : hi IndentGuidesOdd  ctermbg=236
+autocmd VimEnter,Colorscheme * : hi IndentGuidesEven ctermbg=black
+
+filetype plugin indent on
+
 " =================================================
 " 通常設定
 " =================================================
 syntax on
 filetype plugin on
 set encoding=utf-8
-" 256色モード
-set t_Co=256
-" 256色カラーは各種ターミナルとVimとtmuxやscreenが対応している必要がある
-colorscheme molokai
 
 " 新しい行のインデントを現在行と同じにする
 " set autoindent
