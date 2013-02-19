@@ -27,3 +27,5 @@ diff.trailingwhitespace = bold red_background
 
 [pager]
 pager = LESS='FSRX' less
+
+%include ~/.hgrc.local
