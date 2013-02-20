@@ -20,7 +20,7 @@ setopt auto_pushd
 # ディレクトリスタックに同じディレクトリを追加しないようになる
 setopt pushd_ignore_dups
 # コマンドのスペルチェックをする
-setopt correct
+# setopt correct
 # コマンドライン全てのスペルチェックをする
 setopt correct_all
 # 上書きリダイレクトの禁止
