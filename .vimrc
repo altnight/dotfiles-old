@@ -177,14 +177,11 @@ nnoremap <silent> fr :<C-u>Unite -buffer-name=register register<CR>
 nnoremap <silent> fm :<C-u>Unite file_mru<CR>
 
 " Ack.vim
-" Macの場合 brew install ack
-" Ubuntuの場合 sudo apt-get install ack-grep
+" Macの場合 brew install the_silver_searcher
+" Ubuntuの場合 https://github.com/ggreer/the_silver_searcher から build
 " :Ack patterns
 NeoBundle 'https://github.com/mileszs/ack.vim'
-" for Debian/Ubuntu
-if OSTYPE == "Linux\n"
-  let g:ackprg="ack-grep -H --nocolor --nogroup --column"
-endif
+let g:ackprg = 'ag --nogroup --nocolor --column'
 " =================================================
 " その他
 " =================================================

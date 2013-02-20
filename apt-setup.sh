@@ -1,20 +1,5 @@
 #!/bin/sh
 
-# 不必要っぽいのをとりあえず消す
-sudo apt-get remove -y tracker;
-sudo apt-get remove -y thunderbird;
-sudo apt-get remove -y pidgin;
-sudo apt-get remove -y xchat;
-sudo apt-get remove -y listen;
-sudo apt-get remove -y gimp;
-sudo apt-get remove -y xsane;
-sudo apt-get remove -y abiword;
-sudo apt-get remove -y gnumeric;
-sudo apt-get remove -y catfish;
-sudo apt-get remove -y evolution;
-sudo apt-get remove -y stardict;
-sudo apt-get remove -y gnome-game;
-
 # とりあえずアップデート
 sudo apt-get update;
 sudo apt-get upgrade -y;
@@ -42,6 +27,25 @@ sudo apt-get install -y sqlite3;
 sudo apt-get install -y ctags;
 sudo apt-get install -y zsh;
 
+# gitのデフォルト設定
+git config --global user.name "altnight";
+git config --global user.email altnightsight@gmail.com;
+git config --global core.editor 'vim -c "set fenc=utf-8"';
+git config --global color.ui auto;
+git config --global alias.st status;
+git config --global alias.ci commit;
+git config --global alias.co checkout;
+git config --global alias.d diff;
+git config --global push.default simple;
+
+# ag, better then ack, better then grep
+apt-get install -y automake pkg-config libpcre3-dev;
+git clone git://github.com/ggreer/the_silver_searcher.git;
+cd ~/the_silver_searcher;
+./build.sh;
+sudo make install;
+cd;
+
 # tmux pasteboard
 # git clone git://github.com/ChrisJohnsen/tmux-MacOSX-pasteboard.git
 # cd ./tmux-MacOSX-pasteboard
@@ -53,17 +57,6 @@ mkdir ~/.vim;
 sudo chown -R $USER:$USER.vim;
 sudo chown -R $USER:$USER.viminfo;
 git clone git://github.com/Shougo/neobundle.vim.git ~/.vim/neobundle.vim;
-
-# gitのデフォルト設定
-git config --global user.name "altnight";
-git config --global user.email altnightsight@gmail.com;
-git config --global core.editor 'vim -c "set fenc=utf-8"';
-git config --global color.ui auto;
-git config --global alias.st status;
-git config --global alias.ci commit;
-git config --global alias.co checkout;
-git config --global alias.d diff;
-git config --global push.default simple;
 
 # Pythonまわりの設定
 sudo apt-get install -y python-pip;

@@ -3,8 +3,10 @@
 # ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
 # brew install args を生成
 
-# better grep
-ack
+# ack, better than grep
+# the_silver_searcher, better than ack
+# command, ag
+the_silver_searcher
 # make あたりで必要
 autoconf
 # make あたりで必要
