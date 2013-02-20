@@ -74,8 +74,7 @@ let g:jscomplete_use = ['dom']
 NeoBundle "git://github.com/jmcantrell/vim-virtualenv.git"
 
 " python jedi
-" jedi-vim 内で git submodule update --init すること
-" virtualenv.vim で pip install したはずだけどうまくいかない？
+" pip install jedi, workon virtualenv
 NeoBundle "git://github.com/davidhalter/jedi-vim.git"
 " quickrun とリネーム機能のバッティングを回避
 let g:jedi#rename_command = "<leader>??????"
