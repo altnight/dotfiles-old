@@ -58,12 +58,12 @@ git clone git://github.com/Shougo/neobundle.vim.git ~/.vim/neobundle.vim;
 git config --global user.name "altnight";
 git config --global user.email altnightsight@gmail.com;
 git config --global core.editor 'vim -c "set fenc=utf-8"';
-git config --global color.ui auto
-git config --global alias.st status
-git config --global alias.ci commit
-git config --global alias.co checkout
-git config --global alias.d diff
-git config --global push.default simple
+git config --global color.ui auto;
+git config --global alias.st status;
+git config --global alias.ci commit;
+git config --global alias.co checkout;
+git config --global alias.d diff;
+git config --global push.default simple;
 
 # Pythonまわりの設定
 sudo apt-get install -y python-pip;
@@ -84,4 +84,4 @@ cd ~/.zsh/autojump;
 sudo mkdir -p /etc/profile.d;
 sudo ./install.sh --zsh;
 sudo cp ~/autojump/bin/_j /usr/local/share/zsh/site-functions/;
-cd
+cd;
