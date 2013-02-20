@@ -72,6 +72,8 @@ sudo pip install virtualenvwrapper;
 
 # zsh
 mkdir ~/.zsh;
+# インストールが終わったら chsh で切り替える
+# chsh -s /usr/local/bin/zsh
 
 # zsh autojump
 cd ~/.zsh;

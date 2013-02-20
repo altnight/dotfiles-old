@@ -51,6 +51,7 @@ vim
 # いちおう
 wget
 # はい
+# chsh -s /usr/local/bin/zsh しましょう
 zsh
 # Mac で BSD 系処理を GNU 系処理にするっぽい
 coreutils
