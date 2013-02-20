@@ -84,6 +84,8 @@ NeoBundle "git://github.com/jmcantrell/vim-virtualenv.git"
 NeoBundle "git://github.com/davidhalter/jedi-vim.git"
 " quickrun とリネーム機能のバッティングを回避
 let g:jedi#rename_command = "<leader>??????"
+" デフォルトのサジェストをオフにする
+let g:jedi#popup_on_dot = 0
 
 " NOTE:この順番で記述しないと補完と自動展開ができない
 " lessの自動変換
