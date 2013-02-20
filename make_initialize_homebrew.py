@@ -27,7 +27,7 @@ with open("initialize_homebrew.sh", "w") as f:
     f.write("\n")
     f.write("echo brew update end\n")
     f.write("echo brew install start\n")
-    f.write(INSTALL_COMMAND + package)
+    f.write(INSTALL_COMMAND + " " + package)
     f.write("\n")
     f.write("echo brew install end\n")
     f.write("echo brew doctor start\n")
