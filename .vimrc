@@ -186,6 +186,9 @@ map <silent> sy :call YanktmpYank()<CR>
 map <silent> sp :call YanktmpPaste_p()<CR>
 map <silent> sP :call YanktmpPaste_P()<CR>
 
+" X でもクリップボード
+NeoBundle "git://github.com/kana/vim-fakeclip.git"
+
 " vi sudo:/etc/nginx/nginx.conf などと使う
 " 現在開いているファイルをsudoで開くには :e sudo:%
 NeoBundle 'sudo.vim'
