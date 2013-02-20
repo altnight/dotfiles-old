@@ -69,3 +69,16 @@ sudo apt-get install -y python-pip;
 mkdir ~/venvs;
 sudo pip install virtualenv;
 sudo pip install virtualenvwrapper;
+
+# zsh
+mkdir ~/.zsh;
+
+# zsh autojump
+cd ~/.zsh;
+git clone git://github.com/joelthelion/autojump.git;
+cd ~/.zsh/autojump;
+# for Mac
+sudo mkdir -p /etc/profile.d;
+sudo ./install.sh --zsh;
+sudo cp ~/autojump/bin/_j /usr/local/share/zsh/site-functions/;
+cd
