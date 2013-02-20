@@ -44,6 +44,13 @@ autocmd FileType css,less,sass setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+autocmd FileType javascript,coffee setlocal omnifunc=javascriptcomplete#CompleteJS
+" jscomplete を優先度高める
+" デフォルトは docs で設定されている
+let g:neocomplcache_source_rank = {
+  \ 'jscomplete' : 500,
+  \ }
+
 
 " neocomplcache
 " ネオコンのスニペット展開
@@ -67,7 +74,6 @@ autocmd BufWritePost *.coffee silent CoffeeMake! -cb | cwindow | redraw!
 
 " JScomplete
 NeoBundle 'git://github.com/teramako/jscomplete-vim.git'
-autocmd FileType javascript setlocal omnifunc=jscomplete#CompleteJS
 let g:jscomplete_use = ['dom']
 
 " python virtualenv
