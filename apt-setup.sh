@@ -17,13 +17,16 @@ EOF
 
 #各種必要なものをインストール
 sudo apt-get install -y ntp;
-sudo apt-get install -y vim;
 sudo apt-get install -y tree;
 sudo apt-get install -y htop;
 sudo apt-get install -y tmux;
 sudo apt-get install -y sqlite3;
 sudo apt-get install -y ctags;
 sudo apt-get install -y zsh;
+
+# vim +clipboard X11
+sudo apt-get -y install vim-gtk vim-athena vim-gnome
+sudo apt-get install -y xsel;
 
 # git を最新版に
 sudo apt-get install python-software-properties;

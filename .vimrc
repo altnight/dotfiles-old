@@ -199,8 +199,11 @@ map <silent> sy :call YanktmpYank()<CR>
 map <silent> sp :call YanktmpPaste_p()<CR>
 map <silent> sP :call YanktmpPaste_P()<CR>
 
-" X でもクリップボード
+" -clipboard でもクリップボード
+" xsel を使うけど、いちおう
 NeoBundle "git://github.com/kana/vim-fakeclip.git"
+" X CUI 環境でもクリップボード
+vmap <C-c> :w !xsel -ib<CR><CR>
 
 " vi sudo:/etc/nginx/nginx.conf などと使う
 " 現在開いているファイルをsudoで開くには :e sudo:%
