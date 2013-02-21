@@ -18,14 +18,21 @@ EOF
 #各種必要なものをインストール
 sudo apt-get install -y ntp;
 sudo apt-get install -y vim;
-sudo apt-get install -y git;
 sudo apt-get install -y tree;
-sudo apt-get install -y tig;
 sudo apt-get install -y htop;
 sudo apt-get install -y tmux;
 sudo apt-get install -y sqlite3;
 sudo apt-get install -y ctags;
 sudo apt-get install -y zsh;
+
+# git を最新版に
+sudo apt-get install python-software-properties;
+sudo add-apt-repository ppa:git-core/ppa;
+sudo apt-get update;
+
+sudo apt-get install -y git;
+sudo apt-get install -y git-core;
+sudo apt-get install -y tig;
 
 # gitのデフォルト設定
 git config --global user.name "altnight";
