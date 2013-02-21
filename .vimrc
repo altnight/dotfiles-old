@@ -122,6 +122,10 @@ vmap ,c <Plug>NERDCommenterToggle
 " haml Sassのインデント、色付け
 NeoBundle 'git://github.com/tpope/vim-haml.git'
 
+" JavaScript indent
+" =G で末尾まで自動インデント
+NeoBundle 'git://github.com/vim-scripts/JavaScript-Indent.git'
+
 " jade
 NeoBundle 'jade.vim'
 
