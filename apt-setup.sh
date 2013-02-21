@@ -77,12 +77,13 @@ mkdir ~/venvs;
 sudo pip install virtualenv;
 sudo pip install virtualenvwrapper;
 
-# zsh
-mkdir ~/.zsh;
+# zsh general
+mkdir -p ~/.zsh;
 # インストールが終わったら chsh で切り替える
 # chsh -s /usr/local/bin/zsh
 
 # zsh autojump
+
 cd ~/.zsh;
 git clone git://github.com/joelthelion/autojump.git;
 cd ~/.zsh/autojump;
@@ -90,4 +91,12 @@ cd ~/.zsh/autojump;
 sudo mkdir -p /etc/profile.d;
 sudo ./install.sh --zsh;
 sudo cp ~/autojump/bin/_j /usr/local/share/zsh/site-functions/;
+cd;
+
+# zsh mysql
+
+cd ~/.zsh;
+git clone git://github.com/tetsujin/zsh-function-mysql.git;
+mkdir -p ~/.zsh/functions;
+ln -s ~/.zsh/zsh-function-mysql/mysql ~/.zsh/functions;
 cd;
