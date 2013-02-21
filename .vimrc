@@ -116,6 +116,10 @@ let g:user_zen_expandabbr_key = '<c-e>'
 NeoBundle 'git://github.com/scrooloose/nerdcommenter.git'
 nmap ,c <Plug>NERDCommenterToggle
 vmap ,c <Plug>NERDCommenterToggle
+
+" make jsdoc
+" call function :JsDoc
+NeoBundle 'git://github.com/heavenshell/vim-jsdoc.git'
 " =================================================
 " Syntax
 " =================================================
