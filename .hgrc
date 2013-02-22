@@ -1,6 +1,6 @@
 [ui]
 username = altnight
-editor = /usr/bin/vi
+# editor = /usr/bin/vi
 merge = vimdiff
 style = ~/dotfiles/hg_log_format.tmpl
 
