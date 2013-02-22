@@ -49,7 +49,7 @@ git config --global alias.st status;
 git config --global alias.ci commit;
 git config --global alias.co checkout;
 git config --global alias.d diff;
-git config --global push.default simple;
+git config --global push.default matching;
 
 # ag, better then ack, better then grep
 apt-get install -y automake pkg-config libpcre3-dev;

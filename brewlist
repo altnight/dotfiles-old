@@ -32,7 +32,7 @@ gdbm
 # git config --global alias.ci commit
 # git config --global alias.co checkout
 # git config --global alias.d diff
-# git config --global push.default simple
+# git config --global push.default matching
 git
 # 標準の sed が BSD のため
 # gsed で使う
