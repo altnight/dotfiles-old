@@ -1,0 +1,13 @@
+changeset = '\033[0;33mchengeset : {rev}:{node|short} {tags}\033[0m\nsummary   : {desc|firstline|strip}\nuser      : {author}\nbranch    : {branch}\ndate      : {date|isodate} : {date|age}\n{file_adds}\n{file_dels}\n{file_mods}\n\n'
+
+start_file_adds = '\n'
+file_add = '\033[0;31mA {file_add}\033[0m\n'
+# end_file_adds = ''
+
+# start_file_dels = ''
+file_del = '\033[0;31mR {file_del}\033[0m\n'
+# end_file_dels = ''
+
+# start_file_mods = ''
+file_mod = '\033[0;35mM {file_mod}\033[0m\n'
+# end_file_mods = ''
