@@ -268,6 +268,7 @@ set nocompatible
 " スワップファイルをつくらない
 set noswapfile
 set nobackup
+set nowritebackup
 " タブの代わりに空白文字を挿入する
 set expandtab
 " 変更中のファイルでも、保存しないで他のファイルを表示
