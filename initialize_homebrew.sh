@@ -14,12 +14,12 @@ echo initialize git;
 git config --global user.name "altnight";
 git config --global user.email altnightsight@gmail.com;
 git config --global core.editor 'vim -c "set fenc=utf-8"';
-git config --global color.ui auto
-git config --global alias.st status
-git config --global alias.ci commit
-git config --global alias.co checkout
-git config --global alias.d diff
-git config --global push.default matching
+git config --global color.ui auto;
+git config --global alias.st status;
+git config --global alias.ci commit;
+git config --global alias.co checkout;
+git config --global alias.d diff;
+git config --global push.default matching;
 
 # zsh general
 mkdir -p ~/.zsh;
