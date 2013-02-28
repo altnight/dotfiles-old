@@ -82,8 +82,12 @@ mkdir -p ~/.zsh;
 # インストールが終わったら chsh で切り替える
 # chsh -s /usr/local/bin/zsh
 
-# zsh autojump
+# zsh complition
+cd ~/.zsh/;
+git clone git://github.com/zsh-users/zsh-completions.git;
+cd;
 
+# zsh autojump
 cd ~/.zsh;
 git clone git://github.com/joelthelion/autojump.git;
 cd ~/.zsh/autojump;
@@ -92,7 +96,6 @@ ln -s ~/.zsh/autojump/bin/_j ~/.zsh/functions/;
 cd;
 
 # zsh mysql
-
 cd ~/.zsh;
 git clone git://github.com/tetsujin/zsh-function-mysql.git;
 mkdir -p ~/.zsh/functions;

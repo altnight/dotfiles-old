@@ -7,6 +7,7 @@ precmd() {
 }
 fpath=(
   $HOME/.zsh/*(/N)
+  $HOME/.zsh/zsh-completions/src
   $fpath
 )
 autoload colors; colors
