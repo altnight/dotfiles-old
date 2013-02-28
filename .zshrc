@@ -5,6 +5,7 @@ precmd() {
     LANG=ja_JP.UTF-8 vcs_info
     psvar[1]=$vcs_info_msg_0_
 }
+zstyle ':vcs_info:*' enable git svn hg bzr
 fpath=(
   $HOME/.zsh/*(/N)
   $HOME/.zsh/zsh-completions/src
