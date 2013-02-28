@@ -100,3 +100,9 @@ git clone git://github.com/tetsujin/zsh-function-mysql.git;
 mkdir -p ~/.zsh/functions;
 ln -s ~/.zsh/zsh-function-mysql/mysql ~/.zsh/functions;
 cd;
+
+# zsh ag
+cd ~/.zsh/;
+git clone git://github.com/glidenote/ag-zsh-completion.git;
+ln -s ~/.zsh/ag-zsh-completion/_ag ~/.zsh/functions/
+cd;

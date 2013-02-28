@@ -184,12 +184,11 @@ nnoremap <silent> fr :<C-u>Unite -buffer-name=register register<CR>
 " 最近使用したファイル一覧
 nnoremap <silent> fm :<C-u>Unite file_mru<CR>
 
-" Ack.vim
+" Ag.vim
 " Macの場合 brew install the_silver_searcher
 " Ubuntuの場合 https://github.com/ggreer/the_silver_searcher から build
-" :Ack patterns
-NeoBundle 'https://github.com/mileszs/ack.vim'
-let g:ackprg = 'ag --nogroup --nocolor --column'
+" :Ag [options] {patterns} [{directory}]
+NeoBundle 'git://github.com/rking/ag.vim.git'
 " =================================================
 " その他
 " =================================================
