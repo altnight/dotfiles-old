@@ -91,7 +91,8 @@ cd;
 cd ~/.zsh;
 git clone git://github.com/joelthelion/autojump.git;
 cd ~/.zsh/autojump;
-./install.sh --zsh --local --prefix $HOME/.zsh/autojump/;
+# デフォルトで zsh 指定、local, .autojump にはいる
+./install.sh;
 ln -s ~/.zsh/autojump/bin/_j ~/.zsh/functions/;
 cd;
 
