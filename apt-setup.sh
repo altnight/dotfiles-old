@@ -107,3 +107,9 @@ cd ~/.zsh/;
 git clone git://github.com/glidenote/ag-zsh-completion.git;
 ln -s ~/.zsh/ag-zsh-completion/_ag ~/.zsh/functions/
 cd;
+
+# zsh incremental suggest
+# http://d.hatena.ne.jp/seiunsky/20110519/1305764493
+cd ~/.zsh/;
+curl -O -L http://mimosa-pudica.net/src/incr-0.2.zsh
+cd;

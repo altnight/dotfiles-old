@@ -305,4 +305,7 @@ function crontab() {
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
 
 # autojump
-[[ -s ~/.autojump/etc/profile.d/autojump.zsh ]] && source ~/.autojump/etc/profile.d/autojump.zsh
+[ -f ~/.autojump/etc/profile.d/autojump.zsh ] && source ~/.autojump/etc/profile.d/autojump.zsh
+
+# incrmental tab suggest
+[ -f ~/.zsh/incr*.zsh ] && source ~/.zsh/incr*.zsh
