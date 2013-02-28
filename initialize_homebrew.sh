@@ -28,10 +28,8 @@ mkdir -p ~/.zsh;
 cd ~/.zsh;
 git clone git://github.com/joelthelion/autojump.git;
 cd ~/.zsh/autojump;
-# for Mac
-sudo mkdir -p /etc/profile.d;
-sudo ./install.sh --zsh;
-sudo cp ~/autojump/bin/_j /usr/local/share/zsh/site-functions/;
+./install.sh --zsh --local --prefix $HOME/.zsh/autojump/;
+ln -s ~/.zsh/autojump/bin/_j ~/.zsh/functions/;
 cd;
 
 # zsh mysql
@@ -44,5 +42,5 @@ echo initialize end;
 # zsh ag
 cd ~/.zsh/;
 git clone git://github.com/glidenote/ag-zsh-completion.git;
-ln -s ~/.zsh/ag-zsh-completion/_ag ~/.zsh/functions/
+ln -s ~/.zsh/ag-zsh-completion/_ag ~/.zsh/functions/;
 cd;
