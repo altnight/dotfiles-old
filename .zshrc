@@ -321,3 +321,6 @@ function crontab() {
 
 # incrmental tab suggest
 [ -f ~/.zsh/incr*.zsh ] && source ~/.zsh/incr*.zsh
+
+# antigen
+[ -f ~/.zsh/antigen/antigen.zsh ] && source ~/dotfiles/.zshrc.antigen

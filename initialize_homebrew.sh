@@ -56,3 +56,11 @@ cd;
 cd ~/.zsh/;
 curl -O -L http://mimosa-pudica.net/src/incr-0.2.zsh
 cd;
+
+# zsh antigen
+# syntax highlighting or etc like bundle
+cd ~/.zsh/;
+git clone git://github.com/zsh-users/antigen.git;
+cd ~/.zsh/antigen/;
+zsh antigen.zsh;
+cd;

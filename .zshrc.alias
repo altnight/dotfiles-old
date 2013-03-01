@@ -1,13 +1,20 @@
 case "$OSTYPE" in
-    darwin*)
-alias l="ls -G"
-alias ls="ls -G"
+  darwin*)
+    # coreutils あるなら
+    if [ -f /usr/local/bin/gls ]; then
+      alias l="/usr/local/bin/gls --color=auto"
+      alias ls="/usr/local/bin/gls --color=auto"
+    # ないならデフォルト
+  else
+      alias l="ls -G"
+      alias ls="ls -G"
+    fi
 ;;
-    linux*)
+  linux*)
 alias l="ls --color=auto"
 alias ls="ls --color=auto"
 ;;
-    cygwin*)
+  cygwin*)
 alias l="ls --color=auto"
 alias ls="ls --color=auto"
 ;;
