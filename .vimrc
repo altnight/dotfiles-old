@@ -1,8 +1,8 @@
 " =================================================
-" NeoBundleでの初期設定"
+" 初期設定
 " =================================================
 " NeoBundleの初期設定
-" mkdir ~/.bundle
+" mkdir ~/.vim
 " NeoBundleは git clone git://github.com/Shougo/neobundle.vim.git ~/.vim/neobundle.vim しておく
 set nocompatible
 filetype off
@@ -12,11 +12,10 @@ if has('vim_starting')
   call neobundle#rc(expand('~/.vim'))
 endif
 
-let OSTYPE = system("uname")
+" let OSTYPE = system("uname")
 " =================================================
 " 補完、変換、展開、入力
 " =================================================
-
 
 " NeoBundle
 " プラグイン管理をgitベースで行う
@@ -50,7 +49,6 @@ autocmd FileType javascript,coffee setlocal omnifunc=javascriptcomplete#Complete
 let g:neocomplcache_source_rank = {
   \ 'jscomplete' : 500,
   \ }
-
 
 " neocomplcache
 " ネオコンのスニペット展開
@@ -111,6 +109,10 @@ set tags=tags
 " HTMLやXMLなどの賢い展開
 NeoBundle 'git://github.com/mattn/zencoding-vim.git'
 let g:user_zen_expandabbr_key = '<c-e>'
+
+" Quickfix での置換
+NeoBundle "git://github.com/thinca/vim-qfreplace.git"
+nnoremap <silent>qf :Qfreplace<CR>
 
 " NERDCommenter トグルでコメント/コメントアウト
 NeoBundle 'git://github.com/scrooloose/nerdcommenter.git'
