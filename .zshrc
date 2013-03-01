@@ -186,46 +186,6 @@ function cwaf() {
     LANG=C command ./waf "$@" 2>&1 | sed -e "s@[Ee]rror:.*@$e_RED&$e_normal@g" -e "s@cannot¥sfind.*@$e_RED&$e_normal@g" -e "s@[Ww]arning:.*@$e_BLUE&$e_normal@g"
 }
 
-## Completion configuration
-#
-autoload -U compinit
-compinit -u
-
-# mysql prompt
-# mysql client user
-typeset -A mysql_prompt_style_client_user
-mysql_prompt_style_client_user=(
-    'root'     $fg_bold[red]
-    '*'        $fg_bold[green]
-)
-# mysql client host
-typeset -A mysql_prompt_style_client_host
-mysql_prompt_style_client_host=(
-    '*.local.*'     "$fg_bold[green]"
-    '*.dev.*'       "$fg_bold[yellow]"
-    '*'             "$fg_bold[red]"
-)
-# mysql server user
-typeset -A mysql_prompt_style_server_user
-mysql_prompt_style_server_user=(
-    'root'          "$bg_bold[red]$fg_bold[yellow]"
-    '*'             "$fg_bold[blue]"
-)
-# mysql server host
-typeset -A mysql_prompt_style_server_host
-mysql_prompt_style_server_host=(
-    '*master*'      "$bg_bold[red]$fg_bold[yellow]"  # Master Server
-    '*slave*'       "$bg[yellow]$fg[black]" # Slvae Server
-    '*'             "$fg_bold[blue]"
-)
-# mysql prompt style (Should use single quoted string.)
-mysql_prompt='${style_client_host}${USER}@${HOST}${fg_bold[white]} -> '
-mysql_prompt=$mysql_prompt'${style_server_user}\u${reset_color}${fg_bold[white]}@${style_server_host}\h${reset_color}${fg_bold[white]}:${fg[magenta]}\d ${fg_bold[white]}\v\n'
-mysql_prompt=$mysql_prompt'${fg_bold[white]}${bg_level}mysql${reset_color}> '
-
-
-
-
 ## zsh editor
 
 autoload zed
@@ -315,6 +275,9 @@ function crontab() {
 
 # load local config
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
+
+# mysql_prompt
+[ -f ~/.zsh/functions/mysql ] && source ~/dotfiles/.zshrc.mysql
 
 # autojump
 [ -f ~/.autojump/etc/profile.d/autojump.zsh ] && source ~/.autojump/etc/profile.d/autojump.zsh
