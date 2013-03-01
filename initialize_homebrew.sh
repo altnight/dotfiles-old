@@ -45,12 +45,6 @@ mkdir -p ~/.zsh/functions;
 ln -s ~/.zsh/zsh-function-mysql/mysql ~/.zsh/functions;
 echo initialize end;
 
-# zsh ag
-cd ~/.zsh/;
-git clone git://github.com/glidenote/ag-zsh-completion.git;
-ln -s ~/.zsh/ag-zsh-completion/_ag ~/.zsh/functions/;
-cd;
-
 # zsh incremental suggest
 # http://d.hatena.ne.jp/seiunsky/20110519/1305764493
 cd ~/.zsh/;
