@@ -119,6 +119,10 @@ NeoBundle 'git://github.com/scrooloose/nerdcommenter.git'
 nmap ,c <Plug>NERDCommenterToggle
 vmap ,c <Plug>NERDCommenterToggle
 
+" UTF-8 のエスケープシーケンス表示変換
+" :HideoutOn
+NeoBundle 'git://github.com/osyo-manga/vim-hideout.git'
+
 " make jsdoc
 " call function :JsDoc
 NeoBundle 'git://github.com/heavenshell/vim-jsdoc.git'
