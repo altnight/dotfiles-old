@@ -1,3 +1,18 @@
+autoload -Uz compinit
+compinit
+
+fpath=(
+  $HOME/.zsh/*(/N)
+  $HOME/.zsh/zsh-completions/src
+  $fpath
+)
+autoload -U $(echo ~/.zsh/functions/*(:t))
+
+export CLICOLOR=1
+export LSCOLORS=ExFxCxDxBxegedabagacad
+autoload -U colors
+colors
+
 # VCS settings
 autoload -Uz vcs_info
 precmd() {
@@ -5,19 +20,8 @@ precmd() {
     LANG=ja_JP.UTF-8 vcs_info
     psvar[1]=$vcs_info_msg_0_
 }
-fpath=(
-  $HOME/.zsh/*(/N)
-  $HOME/.zsh/zsh-completions/src
-  $fpath
-)
 
-autoload -Uz compinit
-compinit
-autoload -U colors
-colors
-
-autoload -U $(echo ~/.zsh/functions/*(:t))
-PROMPT="%{${fg[cyan]}%}[%n@%m %~${fg[yellow]}%1v${fg[cyan]}]${reset_color} "
+PROMPT="%{$fg[cyan]%}[%n@%m %~%{$fg[yellow]%}%1v %{$fg[cyan]%}]%{$reset_color%} "
 
 # LANG
 export LANG=ja_JP.UTF-8
@@ -271,8 +275,6 @@ export PIP_REQUIRE_VIRTUELENV=true
 export VERSIONER_PYTHON_PREFER_32_BIT=no
 alias py='python'
 alias bpy='bpython'
-
-export LANG=ja_JP.UTF-8
 
 # crontab -r を封印する
 function crontab() {
