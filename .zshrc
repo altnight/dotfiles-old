@@ -5,17 +5,21 @@ precmd() {
     LANG=ja_JP.UTF-8 vcs_info
     psvar[1]=$vcs_info_msg_0_
 }
-zstyle ':vcs_info:*' enable git svn hg bzr
 fpath=(
   $HOME/.zsh/*(/N)
   $HOME/.zsh/zsh-completions/src
   $fpath
 )
-autoload colors; colors
+
+autoload -Uz compinit
+compinit
+autoload -U colors
+colors
+
 autoload -U $(echo ~/.zsh/functions/*(:t))
 PROMPT="%{${fg[cyan]}%}[%n@%m %~${fg[yellow]}%1v${fg[cyan]}]${reset_color} "
 
-## LANG
+# LANG
 export LANG=ja_JP.UTF-8
 export LESSCHARSET=utf-8
 
@@ -53,6 +57,17 @@ setopt auto_menu
 zstyle ':completion:*:sudo:*' command-path /usr/local/sbin /usr/local/bin /usr/sbin /usr/bin /sbin /bin
 # 色付きで補完する
 zstyle ':completion:*' list-colors di=34 fi=0
+# 過剰に補完
+zstyle ':completion:*' verbose yes
+zstyle ':completion:*' completer _expand _complete _match _prefix _approximate _list _history
+zstyle ':completion:*:messages' format $YELLOW'%d'$DEFAULT
+zstyle ':completion:*:warnings' format $RED'No matches for:'$YELLOW' %d'$DEFAULT
+zstyle ':completion:*:descriptions' format $YELLOW'completing %B%d%b'$DEFAULT
+zstyle ':completion:*:corrections' format $YELLOW'%B%d '$RED'(errors: %e)%b'$DEFAULT
+zstyle ':completion:*:options' description 'yes'
+# グループ名に空文字列を指定すると，マッチ対象のタグ名がグループ名に使われる。
+# したがって，すべての マッチ種別を別々に表示させたいなら以下のようにする
+zstyle ':completion:*' group-name ''
 # Don't complete uninteresting users
 # 補完しないもの
 # alias でもできるが、面倒
