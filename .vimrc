@@ -266,10 +266,13 @@ set encoding=utf-8
 " set autoindent
 " ファイル保存ダイアログの初期ディレクトリをバッファファイル位置に設定
 set browsedir=buffer
-" クリップボードをWindowsと連携
+" クリップボードと連携
+" +clipboard 必要
 set clipboard=unnamed
-" Vi互換をオフ
+" コマンドモードの補完とか
 set nocompatible
+" コマンドモードの補完表示
+set wildmode=longest:full,full
 " スワップファイルをつくらない
 set noswapfile
 set nobackup
