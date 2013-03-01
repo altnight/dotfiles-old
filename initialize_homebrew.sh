@@ -24,11 +24,6 @@ git config --global push.default matching;
 # zsh general
 mkdir -p ~/.zsh;
 
-# zsh complition
-cd ~/.zsh/;
-git clone git://github.com/zsh-users/zsh-completions.git;
-cd;
-
 # zsh autojump;
 cd ~/.zsh;
 git clone git://github.com/joelthelion/autojump.git;

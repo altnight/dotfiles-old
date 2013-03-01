@@ -3,7 +3,7 @@ compinit
 
 fpath=(
   $HOME/.zsh/*(/N)
-  $HOME/.zsh/zsh-completions/src
+  $HOME/.antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-zsh-users-SLASH-zsh-completions.git/src
   $fpath
 )
 autoload -U $(echo ~/.zsh/functions/*(:t))

@@ -82,11 +82,6 @@ mkdir -p ~/.zsh;
 # インストールが終わったら chsh で切り替える
 # chsh -s /usr/local/bin/zsh
 
-# zsh complition
-cd ~/.zsh/;
-git clone git://github.com/zsh-users/zsh-completions.git;
-cd;
-
 # zsh autojump
 cd ~/.zsh;
 git clone git://github.com/joelthelion/autojump.git;
