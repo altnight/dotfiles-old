@@ -2,6 +2,9 @@
 
 source ~/.zsh/antigen/antigen.zsh;
 
+antigen-update;
+antigen-selfupdate;
+
 antigen-bundle git;
 antigen-bundle autojump;
 # antigen-bundle ruby;
