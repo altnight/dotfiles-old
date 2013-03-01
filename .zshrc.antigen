@@ -1,0 +1,24 @@
+#!/bin/zsh
+
+source ~/.zsh/antigen/antigen.zsh;
+
+antigen-bundle git;
+antigen-bundle autojump;
+# antigen-bundle ruby;
+# antigen-bundle rbenv;
+# antigen-bundle bundler;
+antigen-bundle brew;
+antigen-bundle coffee;
+antigen-bundle cp;
+antigen-bundle gem;
+antigen-bundle github;
+antigen-bundle gnu-utils;
+antigen-bundle history;
+antigen-bundle mercurial;
+antigen-bundle npm;
+antigen-bundle node;
+antigen-bundle python;
+
+antigen-bundle zsh-users/zsh-syntax-highlighting;
+
+antigen-apply;
