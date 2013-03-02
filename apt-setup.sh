@@ -91,13 +91,6 @@ cd ~/.zsh/autojump;
 ln -s ~/.zsh/autojump/bin/_j ~/.zsh/functions/;
 cd;
 
-# zsh mysql
-cd ~/.zsh;
-git clone git://github.com/tetsujin/zsh-function-mysql.git;
-mkdir -p ~/.zsh/functions;
-ln -s ~/.zsh/zsh-function-mysql/mysql ~/.zsh/functions;
-cd;
-
 # zsh incremental suggest
 # http://d.hatena.ne.jp/seiunsky/20110519/1305764493
 cd ~/.zsh/;

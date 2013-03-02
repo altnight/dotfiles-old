@@ -4,6 +4,7 @@ compinit
 fpath=(
   $HOME/.zsh/*(/N)
   $HOME/.antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-zsh-users-SLASH-zsh-completions.git/src
+  $HOME/.antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-tetsujin-SLASH-zsh-function-mysql.git/
   $fpath
 )
 autoload -U $(echo ~/.zsh/functions/*(:t))
