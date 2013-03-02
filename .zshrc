@@ -75,15 +75,14 @@ zstyle ':completion:*:options' description 'yes'
 zstyle ':completion:*' group-name ''
 # Don't complete uninteresting users
 # 補完しないもの
-# alias でもできるが、面倒
-zstyle ':completion:*:*:*:users' ignored-patterns \
-        adm amanda apache avahi beaglidx bin cacti canna clamav daemon \
-        dbus distcache dovecot fax ftp games gdm gkrellmd gopher \
-        hacluster haldaemon halt hsqldb ident junkbust ldap lp mail \
-        mailman mailnull mldonkey mysql nagios \
-        named netdump news nfsnobody nobody nscd ntp nut nx openvpn \
-        operator pcap postfix postgres privoxy pulse pvm quagga radvd \
-        rpc rpcuser rpm shutdown squid sshd sync uucp vcsa xfs
+#zstyle ':completion:*:*:*:users' ignored-patterns \
+        #adm amanda apache avahi beaglidx bin cacti canna clamav daemon \
+        #dbus distcache dovecot fax ftp games gdm gkrellmd gopher \
+        #hacluster haldaemon halt hsqldb ident junkbust ldap lp mail \
+        #mailman mailnull mldonkey mysql nagios \
+        #named netdump news nfsnobody nobody nscd ntp nut nx openvpn \
+        #operator pcap postfix postgres privoxy pulse pvm quagga radvd \
+        #rpc rpcuser rpm shutdown squid sshd sync uucp vcsa xfs
 #zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 # 複数のリダイレクトやパイプなど、必要に応じて tee や cat の機能が使われる
 setopt multios
@@ -294,8 +293,11 @@ function crontab() {
 # load local config
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
 
+# antigen
+[ -f ~/.zsh/antigen/antigen.zsh ] && source ~/dotfiles/.zshrc.antigen
+
 # mysql_prompt
-[ -f ~/.zsh/functions/mysql ] && source ~/dotfiles/.zshrc.mysql
+[ -f ~/.antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-tetsujin-SLASH-zsh-function-mysql.git/mysql ] && source ~/dotfiles/.zshrc.mysql
 
 # autojump
 [ -f ~/.autojump/etc/profile.d/autojump.zsh ] && source ~/.autojump/etc/profile.d/autojump.zsh
@@ -303,5 +305,3 @@ function crontab() {
 # incrmental tab suggest
 [ -f ~/.zsh/incr*.zsh ] && source ~/.zsh/incr*.zsh
 
-# antigen
-[ -f ~/.zsh/antigen/antigen.zsh ] && source ~/dotfiles/.zshrc.antigen
