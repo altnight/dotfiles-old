@@ -79,6 +79,7 @@ sudo pip install virtualenvwrapper;
 
 # zsh general
 mkdir -p ~/.zsh;
+mkdir -p ~/.zsh/functions;
 # インストールが終わったら chsh で切り替える
 # chsh -s /usr/local/bin/zsh
 

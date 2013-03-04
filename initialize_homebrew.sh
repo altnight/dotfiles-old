@@ -23,6 +23,7 @@ git config --global push.default matching;
 
 # zsh general
 mkdir -p ~/.zsh;
+mkdir -p ~/.zsh/functions;
 
 # zsh autojump;
 cd ~/.zsh;
