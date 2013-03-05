@@ -23,6 +23,7 @@ precmd() {
 }
 
 PROMPT="%{$fg[cyan]%}[%n@%m %~%{$fg[yellow]%}%1v %{$fg[cyan]%}]%{$reset_color%} "
+SPROMPT="(%R)って(%r)じゃね？そうなら(y)ちゃうなら(n)キャンセル(a)シェルに戻る(e):"
 
 # LANG
 export LANG=ja_JP.UTF-8
