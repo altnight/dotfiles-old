@@ -217,6 +217,11 @@ NeoBundle 'sudo.vim'
 " \r で現在開いているスクリプトを実行
 NeoBundle 'git://github.com/thinca/vim-quickrun.git'
 
+" 一時ファイルの作成
+" :JunkfileOpen
+" filetype は自前でつけてやる
+NeoBundle 'git://github.com/Shougo/junkfile.vim.git'
+
 " =================================================
 " colorschemeとか見た目とか
 " =================================================
