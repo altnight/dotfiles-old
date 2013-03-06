@@ -210,9 +210,9 @@ NeoBundle "git://github.com/kana/vim-fakeclip.git"
 " X CUI 環境でもクリップボード
 vmap <C-c> :w !xsel -ib<CR><CR>
 
-" vi sudo:/etc/nginx/nginx.conf などと使う
-" 現在開いているファイルをsudoで開くには :e sudo:%
+" 現在開いているファイルをsudoで開く :e sudo:%
 NeoBundle 'sudo.vim'
+nnoremap <silent>,sudo :e sudo:%<CR>
 
 " \r で現在開いているスクリプトを実行
 NeoBundle 'git://github.com/thinca/vim-quickrun.git'
