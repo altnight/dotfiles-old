@@ -211,8 +211,9 @@ NeoBundle "git://github.com/kana/vim-fakeclip.git"
 vmap <C-c> :w !xsel -ib<CR><CR>
 
 " 現在開いているファイルをsudoで開く :e sudo:%
+" 編集前のファイブバッファを消す <C-^>:bd!
 NeoBundle 'sudo.vim'
-nnoremap <silent>,sudo :e sudo:%<CR>
+nnoremap <silent>,sudo :e sudo:%<CR><C-^>:bd!
 
 " \r で現在開いているスクリプトを実行
 NeoBundle 'git://github.com/thinca/vim-quickrun.git'
