@@ -1,0 +1,128 @@
+snippet     quickstart
+abbr        quickstart
+prev_word   '^'
+  ===========================
+  ${1:content_name}
+  ===========================
+
+  .. content :: ${1:content_name}
+
+  title1
+  ====================================
+
+  subtitle1
+  -----------------------------------
+
+  subtitle2
+  -----------------------------------
+
+  subtitle3
+  -----------------------------------
+
+  title2
+  ====================================
+
+  subtitle1
+  -----------------------------------
+
+  subtitle2
+  -----------------------------------
+
+  subtitle3
+  -----------------------------------
+
+  title3
+  ====================================
+
+  subtitle1
+  -----------------------------------
+
+  subtitle2
+  -----------------------------------
+
+  subtitle3
+  -----------------------------------
+
+
+snippet     contnents
+abbr        contents
+prev_word   '^'
+  .. Contents :: ${1:contents_name}
+
+snippet     title
+abbr        title
+prev_word   '^'
+  ${1:title}
+  ====================================
+
+snippet     subtitle
+abbr        subtitle
+prev_word   '^'
+  ${1:subtitle}
+  -----------------------------------
+
+snippet     code
+abbr        code-block
+prev_word   '^'
+  .. code-block :: ${1:python}
+
+    ${2:content}
+
+snippet     link_raw
+abbr        link_as_raw
+prev_word   '^'
+  \`${1:link}\`_
+
+snippet     link
+abbr        link_and_label
+prev_word   '^'
+  \`${1:title} <${2:link}>\`_
+
+snippet     table_grid
+abbr        grid_table
+prev_word   '^'
+  +------------------+------------+-----------------------+------------+
+  |${1:cel}                  |            |                       |            |
+  +==================+============+=======================+============+
+  |                  |            |                       |            |
+  +------------------+------------+-----------------------+------------+
+  |                  |            |                       |            |
+  +------------------+------------+-----------------------+------------+
+
+snippet     field_list
+abbr        field_list
+prev_word   '^'
+  :${1:text}  :  :  :
+  :  :  :  :
+
+snippet     list
+abbr        list
+prev_word   '^'
+  -
+  -
+  -
+  -
+
+snippet     nested_list
+abbr        nested_list
+prev_word   '^'
+
+  - ${1:text}
+  -
+  -
+  -
+
+snippet     caption
+abbr        caption
+prev_word   '^'
+  [#]
+
+snippet     image
+abbr        image
+prev_word   '^'
+  .. image :: ${1:path}
+
+snippet     strong
+abbr        strong
+prev_word   '^'
+  **${1:text}**
