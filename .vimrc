@@ -195,6 +195,10 @@ nnoremap <silent> fm :<C-u>Unite file_mru<CR>
 " Ubuntuの場合 https://github.com/ggreer/the_silver_searcher から build
 " :Ag [options] {patterns} [{directory}]
 NeoBundle 'git://github.com/rking/ag.vim.git'
+
+" 現在開いているバッファへ作業ディレクトリ(カレントディレクトリ)の変更するマッピング
+nnoremap <silent> cd :cd %:h<CR>
+
 " =================================================
 " その他
 " =================================================
