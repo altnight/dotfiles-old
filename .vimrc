@@ -342,5 +342,7 @@ autocmd FileType python set tabstop=4 shiftwidth=4
 autocmd FileType coffee set tabstop=4 shiftwidth=4
 autocmd FileType sass set tabstop=4 shiftwidth=4
 
-" gfでのファイル移動
+" html で gf でのファイル移動
 autocmd FileType html setlocal includeexpr=substitute(v:fname,'^\\/',',') | setlocal path+=;/''
+" python で gf でインポート元の実ファイルへ移動
+NeoBundle 'git://github.com/mkomitee/vim-gf-python.git'
