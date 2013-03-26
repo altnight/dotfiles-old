@@ -147,6 +147,7 @@ NeoBundle 'git://github.com/vim-scripts/rest.vim.git'
 
 " Python
 NeoBundle 'mitechie/pyflakes-pathogen'
+NeoBundle 'git://github.com/nvie/vim-flake8.git'
 
 " nginxのsyntax
 NeoBundle 'nginx.vim'
@@ -158,9 +159,14 @@ NeoBundle 'git://github.com/aohta/blockdiag.vim.git'
 " 各種構文チェックしてくれるらしい
 NeoBundle 'git://github.com/scrooloose/syntastic.git'
 
-" python は pyflakes
+" python は pyflakes-pathogen + flake8
+" vim-pathogen いれろっていわれてるけどそうすると pyflakes
+" の結果を syntastic で表示してくれないので両方いれてる
+"
 " javascript は jshint
 " html は HTML Tidy
+let g:syntastic_check_on_open=1
+let g:syntastic_python_checker="flake8"
 let g:syntastic_mode_map = { 'mode': 'passive',
                            \ 'active_filetypes': ['python', 'javascript'],
                            \ 'passive_filetypes': [] }
