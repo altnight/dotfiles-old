@@ -5,7 +5,7 @@ prev_word   '^'
   ${1:content_name}
   ===========================
 
-  .. content :: ${1:content_name}
+  .. contents :: 目次
 
   title1
   ====================================
@@ -47,7 +47,7 @@ prev_word   '^'
 snippet     contnents
 abbr        contents
 prev_word   '^'
-  .. Contents :: ${1:contents_name}
+  .. contents :: ${1:contents_name}
 
 snippet     title
 abbr        title
@@ -73,7 +73,7 @@ abbr        link_as_raw
 prev_word   '^'
   \`${1:link}\`_
 
-snippet     link
+snippet     link_label
 abbr        link_and_label
 prev_word   '^'
   \`${1:title} <${2:link}>\`_
@@ -89,11 +89,13 @@ prev_word   '^'
   |                  |            |                       |            |
   +------------------+------------+-----------------------+------------+
 
-snippet     field_list
-abbr        field_list
+snippet     table_simple
+abbr        simple_table
 prev_word   '^'
-  :${1:text}  :  :  :
-  :  :  :  :
+  :${1:text}:
+  :  :
+  :  :
+  :  :
 
 snippet     list
 abbr        list
