@@ -34,7 +34,6 @@ alias tarx='tar xzvf'
 alias tarc='tar czvf'
 
 alias ta='tmux attach'
-alias tmux='tmux -2'
 
 alias gr='find . | xargs grep -ni $1'
 alias psgr='ps aux | grep'
