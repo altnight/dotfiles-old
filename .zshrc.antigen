@@ -2,28 +2,369 @@
 
 source ~/.zsh/antigen/antigen.zsh
 
+# いちいち update するの重いから手動で
+# updated 2013/04/18
 # antigen-update
 # antigen-selfupdate
 
-antigen-bundle git
-antigen-bundle autojump
-# antigen-bundle ruby
-# antigen-bundle rbenv
-# antigen-bundle bundler
-antigen-bundle brew
-antigen-bundle coffee
-antigen-bundle cp
-antigen-bundle gem
-antigen-bundle github
-antigen-bundle gnu-utils
-antigen-bundle history
-antigen-bundle mercurial
-antigen-bundle npm
-antigen-bundle node
-antigen-bundle python
+antigen-bundles << EOF
 
-antigen-bundle zsh-users/zsh-syntax-highlighting
-antigen-bundle zsh-users/zsh-completions
-antigen-bundle tetsujin/zsh-function-mysql
+## Java ant
+# ant
 
+## apache, macports
+# apache2-macports
+
+## archlinux
+# archlinux
+
+## zsh complete path
+# autojump
+
+## battery?
+# battery
+
+## node build tool
+# bower
+
+## mac command
+# brew
+
+## ruby libraly sandbox
+# bundler
+
+## man for safari(mac os x)
+# bwana
+
+## PHP framework
+# cake
+
+## ruby deploy
+# capistrano
+
+## darui
+# cloudapp
+
+## coffee to JS
+# coffee
+
+## keyboard utils?
+# colemak
+
+## man for color?
+# colored-man
+
+## darui
+# command-not-found
+
+## zsh completion for human plugin
+# compleat
+
+## HTML editor by Mozilla
+# composer
+
+## darui
+# copydir
+
+## darui
+# cp
+
+## CPAN
+# cpanm
+
+## darui
+# debian
+
+## darui
+# dircycle
+
+## dauri
+# dirpersist
+
+## python framework
+django
+
+## 絵文字？
+# emoji-clock
+
+## some encode?
+# encode64
+
+## 7zip
+# extract
+
+# pytho deploy tool
+# fabric
+
+## like autojump
+# fasd
+
+## terminal emulator
+# fbterm
+
+## python libraly, for Warehouse API
+# forklift
+
+## GNU assembler
+# gas
+
+## ruby libraly manager
+# gem
+
+## DVCS tool
+git
+
+# git-extras
+
+# git-flow
+
+# git-hubflow
+
+# git-remote-branch
+
+# gitfast
+
+## git repository service
+# github
+
+## darui
+# gnu-utils
+
+## Go lang
+# golang
+
+# gpg-agent
+
+## Groovy build tool
+# gradle
+
+## Groovy framework
+# grails
+
+## heroku, SaaS
+# heroku
+
+## sh history
+# history
+
+## zsh script for history
+# history-substring-search
+
+## node build
+# jake-node
+
+## like Trac, Redmine
+# jira
+
+## JVM ruby?
+# jruby
+
+## editor for KDE
+# kate
+
+## chef tool?
+# knife
+
+## dauri
+# laravel
+
+## darui
+# last-working-dir
+
+## Clojure build tool
+# lein
+
+#@ lighthouse Puppy, linux desktop?
+# lighthouse
+
+## net game
+# lol
+
+## mac ports
+# macports
+
+## DVCS
+mercurial
+
+## Maven, Java build tool
+# mvn
+
+## dauri
+# mysql-macports
+
+## generate static web site by ruby
+# nanoc
+
+## JavaScript for Server
+# node
+
+## node package manager
+# npm
+
+## dauri
+# nyan
+
+## mac os x?
+osx
+
+## dauri
+# pass
+
+## darui
+# per-directory-history
+
+## perl lang
+# perl
+
+## php testunit
+# phing
+
+## python libraly manager
+pip
+
+## darui
+# pj
+
+## ruby libraly, development server
+# pow
+
+## like pow
+# powder
+
+# like pow
+# powify
+
+## darui
+# profiles
+
+## python lang
+# python
+
+## ruby framework
+# rails
+
+## ruby framework
+# rails3
+
+## ruby build command
+# rake
+
+## ruby version manager
+# rbenv
+
+## ruby version manager
+# rbfu
+
+## Erlang build tool
+# rebar
+
+# redis, KVS storage
+# redis-cli
+
+## sync command
+# rsync
+
+## ruby lang
+# ruby
+
+## rub version sandbox
+# rvm
+
+## wordpress plugin?
+# safe-paste
+
+## Scala build
+# sbt
+
+# Scala lang
+# scala
+
+## virtual terminal
+# screen
+
+## snippet survice
+# sprunge
+
+## command of ssh
+# ssh-agent
+
+## sublime text?
+# sublime
+
+## like deamontools
+# supervisor
+
+## open suse?
+# suse
+
+## SVN
+# svn
+
+## PHP framework
+# symfony
+
+## PHP framework
+# symfony2
+
+## dauri
+# systemd
+
+## Ubuntu task tool
+# taskwarrior
+
+## dauri
+# terminalapp
+
+## terminal auto setup tool
+# terminitor
+
+## mac textmate
+# textmate
+
+## oh-my-zsh themes
+# themes
+
+## dauri
+# thor
+
+## virtual terminal
+# tmux
+
+## auto setup tmux
+# tmuxinator
+
+## bittrrent?
+# torrent
+
+## normarize URL
+# urltools
+
+## setup VM tool
+# vagrant
+
+## zsh command mode
+# vi-mode
+
+## virtualenv, wrapper
+# virtualenvwrapper
+
+## vim plugin manager
+# vundle
+
+## remote startup
+# wakeonlan
+
+## RHEL package manager
+# yum
+
+## darui
+# zeus
+
+zsh-users/zsh-syntax-highlighting
+zsh-users/zsh-completions
+tetsujin/zsh-function-mysql
+
+EOF
+
+# 適用
 antigen-apply
