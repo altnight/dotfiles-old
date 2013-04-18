@@ -27,10 +27,12 @@ nnoremap <silent> ,nbI :<C-u>NeoBundleInstall!<CR>
 " clean :NeoBundleClean
 nnoremap <silent> ,nbc :<C-u>NeoBundleClean<CR>
 
-" neocomplcacehe
+" neocomplcache
 NeoBundle 'git://github.com/Shougo/neocomplcache.git'
 " neocomplcaceheを有効にする
 let g:neocomplcache_enable_at_startup = 1
+" 1文字目から補完を始める
+let g:neocomplcache_auto_completion_start_length = 1
 " 辞書補完
 let g:neocomplcache_dictionary_filetype_lists = {
    \ 'default' : '',
@@ -49,6 +51,23 @@ autocmd FileType javascript,coffee setlocal omnifunc=javascriptcomplete#Complete
 let g:neocomplcache_source_rank = {
   \ 'jscomplete' : 500,
   \ }
+
+
+" インサートモード1回目で強制的にキャッシュ
+autocmd InsertEnter * call s:neco_pre_cache()
+function! s:neco_pre_cache()
+  if exists('b:neco_pre_cache')
+    return
+  endif
+  let b:neco_pre_cache = 1
+  if bufname('%') =~ g:neocomplcache_lock_buffer_name_pattern
+    return
+  endif
+  :NeoComplCacheCachingBuffer
+  :NeoComplCacheCachingDictionary
+endfunction
+
+
 
 " neocomplcache
 " ネオコンのスニペット展開
@@ -84,15 +103,6 @@ NeoBundle "git://github.com/davidhalter/jedi-vim.git"
 let g:jedi#rename_command = "<leader>??????"
 " デフォルトのサジェストをオフにする
 let g:jedi#popup_on_dot = 0
-
-" NOTE:この順番で記述しないと補完と自動展開ができない
-" lessの自動変換
-NeoBundle 'git://github.com/plasticscafe/vim-less-autocompile.git'
-autocmd BufRead,BufNewFile *.less set filetype=less
-" 自動で変換
-let g:less_autocompile=1
-" 圧縮しない
-let g:less_compress=0
 
 " less補完
 NeoBundle 'git://github.com/groenewege/vim-less.git'
@@ -208,6 +218,15 @@ nnoremap <silent> cd :cd %:h<CR>
 " =================================================
 " その他
 " =================================================
+" 非同期処理ライブラリ
+" neocomplcache の補完を非同期にするため
+NeoBundle 'Shougo/vimproc', {
+      \ 'build' : {
+      \     'mac' : 'make -f make_mac.mak',
+      \     'unix' : 'make -f make_unix.mak',
+      \    },
+      \ }
+
 " 異なるvim間でのyank共有
 NeoBundle 'yanktmp.vim'
 map <silent> sy :call YanktmpYank()<CR>
