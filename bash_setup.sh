@@ -1,6 +1,6 @@
 #!/bin/sh
 
-DOT_FILES=( .zshrc.antigen .hgrc .vimrc .tmux.conf .bashrc .ackrc .pyrc.py .zshrc)
+DOT_FILES=( .zshrc.antigen .hgrc .vimrc .tmux.conf .bashrc .ackrc .zshrc)
 
 for file in ${DOT_FILES[@]}
   do
