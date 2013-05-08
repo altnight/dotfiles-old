@@ -68,7 +68,6 @@ function! s:neco_pre_cache()
 endfunction
 
 
-
 " neocomplcache
 " ネオコンのスニペット展開
 NeoBundle 'git://github.com/Shougo/neosnippet.git'
@@ -103,10 +102,6 @@ NeoBundle "git://github.com/davidhalter/jedi-vim.git"
 let g:jedi#rename_command = "<leader>??????"
 " デフォルトのサジェストをオフにする
 let g:jedi#popup_on_dot = 0
-
-" less補完
-NeoBundle 'git://github.com/groenewege/vim-less.git'
-autocmd BufNewFile,BufRead *.less set filetype=css
 
 " 英語補完
 NeoBundle 'https://github.com/ujihisa/neco-look.git'
@@ -201,10 +196,16 @@ NeoBundle 'git://github.com/Shougo/unite.vim.git'
 nnoremap <silent> fb :<C-u>Unite buffer<CR>
 " ファイル一覧
 nnoremap <silent> ff :<C-u>UniteWithBufferDir -buffer-name=dotfiles file<CR>
-" レジスタ一覧
-nnoremap <silent> fr :<C-u>Unite -buffer-name=register register<CR>
 " 最近使用したファイル一覧
 nnoremap <silent> fm :<C-u>Unite file_mru<CR>
+" ctrips 的ななにか
+nnoremap <silent> fa :<C-u>execute
+      \ 'Unite'
+      \ '-start-insert'
+      \ 'buffer file_mru'
+      \ 'file:'.fnameescape(expand('%:p:h'))
+      \ 'file_rec:!:'.fnameescape(expand('%:p:h'))
+      \ <CR>
 
 " Ag.vim
 " Macの場合 brew install the_silver_searcher
@@ -257,10 +258,6 @@ NeoBundle 'git://github.com/Shougo/junkfile.vim.git'
 " =================================================
 " molokai
 NeoBundle 'molokai'
-" desert
-NeoBundle 'desert.vim'
-" desert256
-NeoBundle 'desert256.vim'
 " ir_black
 NeoBundle 'git://github.com/wgibbs/vim-irblack.git'
 
@@ -344,8 +341,6 @@ nmap <Esc><Esc> :nohlsearch<CR><Esc>
 
 " 保存時に行末の空白を除去する
 autocmd BufWritePre * :%s/\s\+$//ge
-" 保存時にtabをスペースに変換する
-" autocmd BufWritePre * :%s/\t/  /ge
 
 " Tabでウィンドウの移動
 nnoremap <silent><Tab> <C-w>w
