@@ -5,12 +5,11 @@
 " mkdir ~/.vim
 " NeoBundleは git clone git://github.com/Shougo/neobundle.vim.git ~/.vim/neobundle.vim しておく
 set nocompatible
-filetype off
 if has('vim_starting')
   set runtimepath+=~/.vim/neobundle.vim
-
-  call neobundle#rc(expand('~/.vim'))
 endif
+
+call neobundle#rc(expand('~/.vim'))
 
 " let OSTYPE = system("uname")
 " =================================================
@@ -19,7 +18,7 @@ endif
 
 " NeoBundle
 " プラグイン管理をgitベースで行う
-NeoBundle 'git://github.com/Shougo/neobundle.vim.git'
+NeoBundleFetch 'git://github.com/Shougo/neobundle.vim.git'
 " install :NeoBundleInstall
 nnoremap <silent> ,nbi :<C-u>NeoBundleInstall<CR>
 " install & update :NeoBundleInstall!
@@ -273,6 +272,7 @@ colorscheme molokai
 
 " インデントに色付け
 NeoBundle "git://github.com/nathanaelkane/vim-indent-guides.git"
+
 " 起動時から使用
 let g:indent_guides_enable_on_vim_startup = 1
 " 手動で色設定
