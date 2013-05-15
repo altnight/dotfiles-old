@@ -8,6 +8,7 @@ style = ~/dotfiles/hg_log_format.tmpl
 color =
 graphlog =
 pager =
+record =
 
 [color]
 status.modified = magenta bold
