@@ -211,6 +211,7 @@ nnoremap <silent> fa :<C-u>execute
 " Ubuntuの場合 https://github.com/ggreer/the_silver_searcher から build
 " :Ag [options] {patterns} [{directory}]
 NeoBundle 'git://github.com/rking/ag.vim.git'
+let g:agprg="ag --nocolor --nogroup --column"
 
 " 現在開いているバッファへ作業ディレクトリ(カレントディレクトリ)の変更するマッピング
 nnoremap <silent> cd :cd %:h<CR>
