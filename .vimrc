@@ -216,6 +216,10 @@ let g:agprg="ag --nocolor --nogroup --column"
 " 現在開いているバッファへ作業ディレクトリ(カレントディレクトリ)の変更するマッピング
 nnoremap <silent> cd :cd %:h<CR>
 
+" カレンダー
+" :Calender
+NeoBundle 'git://github.com/mattn/calendar-vim.git'
+
 " =================================================
 " その他
 " =================================================
