@@ -283,7 +283,7 @@ function crontab() {
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
 
 # antigen
-[ -f ~/.zsh/antigen/antigen.zsh ] && source ~/dotfiles/.zshrc.antigen
+ [ -f ~/.zsh/antigen/antigen.zsh ] && source ~/dotfiles/.zshrc.antigen
 
 # mysql_prompt
 [ -f ~/.antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-tetsujin-SLASH-zsh-function-mysql.git/mysql ] && source ~/dotfiles/.zshrc.mysql
