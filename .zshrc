@@ -1,13 +1,13 @@
-autoload -Uz compinit
-compinit
-
 fpath=(
+  $HOME/.antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-tetsujin-SLASH-zsh-function-mysql.git
   $HOME/.zsh/*(/N)
   $HOME/.antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-zsh-users-SLASH-zsh-completions.git/src
-  $HOME/.antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-tetsujin-SLASH-zsh-function-mysql.git
   $fpath
 )
 autoload -U $(echo ~/.zsh/functions/*(:t))
+
+autoload -Uz compinit
+compinit
 
 export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
