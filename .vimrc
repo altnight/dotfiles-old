@@ -28,12 +28,31 @@ nnoremap <silent> ,nbc :<C-u>NeoBundleClean<CR>
 
 " neocomplcache
 NeoBundle 'git://github.com/Shougo/neocomplcache.git'
+" neocomplcaceheを無効にする
+let g:neocomplcache_enable_at_startup = 0
+
+" neocomplete
+NeoBundle 'Shougo/neocomplete'
 " neocomplcaceheを有効にする
-let g:neocomplcache_enable_at_startup = 1
+let g:neocomplete#enable_at_startup = 1
+
+" なんか公式にある
+if !exists('g:neocomplete#keyword_patterns')
+    let g:neocomplete#keyword_patterns = {}
+endif
+let g:neocomplete#keyword_patterns['default'] = '\h\w*'
+
 " 1文字目から補完を始める
 let g:neocomplcache_auto_completion_start_length = 1
-" 辞書補完
+" 辞書補完(neocomplcache)
 let g:neocomplcache_dictionary_filetype_lists = {
+   \ 'default' : '',
+   \ 'css' : $HOME.'/dotfiles/vimfiles/css.dict',
+   \ 'less' : $HOME.'/dotfiles/vimfiles/css.dict',
+   \ 'sass' : $HOME.'/dotfiles/vimfiles/css.dict',
+   \ }
+" 辞書補完(neocomplete)
+let g:neocomplete#sources#dictionary#dictionaries = {
    \ 'default' : '',
    \ 'css' : $HOME.'/dotfiles/vimfiles/css.dict',
    \ 'less' : $HOME.'/dotfiles/vimfiles/css.dict',
@@ -41,31 +60,20 @@ let g:neocomplcache_dictionary_filetype_lists = {
    \ }
 " neocomplcacheのオムニ補完
 autocmd FileType css,less,sass setlocal omnifunc=csscomplete#CompleteCSS
-autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType html,htmldjango setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 autocmd FileType javascript,coffee setlocal omnifunc=javascriptcomplete#CompleteJS
+
+" JScomplete
+NeoBundle 'git://github.com/teramako/jscomplete-vim.git'
+let g:jscomplete_use = ['dom']
+" NOTE: neocomplete の source にはまだなってない
 " jscomplete を優先度高める
 " デフォルトは docs で設定されている
 let g:neocomplcache_source_rank = {
   \ 'jscomplete' : 500,
   \ }
-
-
-" インサートモード1回目で強制的にキャッシュ
-autocmd InsertEnter * call s:neco_pre_cache()
-function! s:neco_pre_cache()
-  if exists('b:neco_pre_cache')
-    return
-  endif
-  let b:neco_pre_cache = 1
-  if bufname('%') =~ g:neocomplcache_lock_buffer_name_pattern
-    return
-  endif
-  :NeoComplCacheCachingBuffer
-  :NeoComplCacheCachingDictionary
-endfunction
-
 
 " neocomplcache
 " ネオコンのスニペット展開
@@ -86,10 +94,6 @@ autocmd BufNewFile *.py 0r $HOME/dotfiles/vimfiles/templates.py
 " coffeescript
 NeoBundle 'git://github.com/kchmck/vim-coffee-script.git'
 autocmd BufWritePost *.coffee silent CoffeeMake! -cb | cwindow | redraw!
-
-" JScomplete
-NeoBundle 'git://github.com/teramako/jscomplete-vim.git'
-let g:jscomplete_use = ['dom']
 
 " python virtualenv
 NeoBundle "git://github.com/jmcantrell/vim-virtualenv.git"
@@ -140,9 +144,6 @@ NeoBundle 'git://github.com/tpope/vim-haml.git'
 " =G で末尾まで自動インデント
 NeoBundle 'git://github.com/vim-scripts/JavaScript-Indent.git'
 
-" jade
-NeoBundle 'jade.vim'
-
 " Markdown
 NeoBundle 'git://github.com/tpope/vim-markdown.git'
 
@@ -169,8 +170,8 @@ NeoBundle 'git://github.com/scrooloose/syntastic.git'
 "
 " javascript は jshint
 " html は HTML Tidy
+" python は flake8
 let g:syntastic_check_on_open=1
-let g:syntastic_python_checker="flake8"
 let g:syntastic_mode_map = { 'mode': 'passive',
                            \ 'active_filetypes': ['python', 'javascript'],
                            \ 'passive_filetypes': [] }
