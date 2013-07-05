@@ -137,6 +137,9 @@ NeoBundle 'git://github.com/heavenshell/vim-jsdoc.git'
 " =================================================
 " Syntax
 " =================================================
+" 全体のインデントをマッピング
+nnoremap <silent>,in gg=G<CR>
+
 " haml Sassのインデント、色付け
 NeoBundle 'git://github.com/tpope/vim-haml.git'
 
