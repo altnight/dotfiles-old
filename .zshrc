@@ -6,9 +6,6 @@ fpath=(
 )
 autoload -U $(echo ~/.zsh/functions/*(:t))
 
-autoload -Uz compinit
-compinit
-
 export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
 autoload -U colors
@@ -293,3 +290,6 @@ function crontab() {
 
 # incrmental tab suggest
 [ -f ~/.zsh/incr*.zsh ] && source ~/.zsh/incr*.zsh
+
+autoload -Uz compinit
+compinit
