@@ -26,6 +26,11 @@ nnoremap <silent> ,nbI :<C-u>NeoBundleInstall!<CR>
 " clean :NeoBundleClean
 nnoremap <silent> ,nbc :<C-u>NeoBundleClean<CR>
 
+" Lua for Mac
+if has('mac')
+  let $LUA_DLL='/usr/local/lib/liblua.dylib'
+endif
+
 " neocomplcache
 NeoBundle 'git://github.com/Shougo/neocomplcache.git'
 " neocomplcaceheを無効にする
