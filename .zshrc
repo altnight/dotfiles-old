@@ -81,7 +81,7 @@ if [ -f ~/.antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-hchbaw-SLASH
   zle -N zle-keymap-select auto-fu-zle-keymap-select
 
   # completion
-  #zstyle ':completion:*' completer _oldlist _complete _match _ignored _approximate _list _history _expand _prefix
+  zstyle ':completion:*' completer _oldlist _complete _match _ignored _approximate _list _history _expand _prefix
 fi
 # 補完キー（Tab,  Ctrl+I) を連打するだけで順に補完候補を自動で補完する
 setopt auto_menu
