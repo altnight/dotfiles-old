@@ -58,22 +58,30 @@ setopt brace_ccl
 #setopt chase_links
 
 # from http://blog.glidenote.com/blog/2012/04/07/auto-fu.zsh/
+# from http://d.hatena.ne.jp/tarao/20100531/1275322620
 #=============================
 # source auto-fu.zsh
 #=============================
-~/.antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-hchbaw-SLASH-auto-fu.zsh.git/auto-fu.zsh
 if [ -f ~/.antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-hchbaw-SLASH-auto-fu.zsh.git/auto-fu.zsh ]; then
-  source ~/.antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-hchbaw-SLASH-auto-fu.zsh.git/auto-fu.zsh
-  function zle-line-init () {
-    auto-fu-init
-  }
-  # -azfu- 表示
-  zle -N zle-line-init
-  zstyle ':completion:*' completer _oldlist _complete _match _ignored _approximate _list _history _expand _prefix
 
+  # precompile の結果
+  # from http://d.hatena.ne.jp/hchbaw/20100603/1275573121
+
+  ## auto-fu.zsh stuff.
+  # source ~/.antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-hchbaw-SLASH-auto-fu.zsh.git/auto-fu.zsh
+
+  { . ~/.zsh/auto-fu; auto-fu-install; }
   zstyle ':auto-fu:highlight' input bold
-  zstyle ':auto-fu:highlight' completion fg=white
-  zstyle ':auto-fu:var' postdisplay ''
+  zstyle ':auto-fu:highlight' completion fg=black,bold
+  zstyle ':auto-fu:highlight' completion/one fg=white,bold,underline
+  zstyle ':auto-fu:var' postdisplay $'\n-azfu-'
+  zstyle ':auto-fu:var' track-keymap-skip opp
+  # azfu 表示と初期化
+  zle-line-init () {auto-fu-init;}; zle -N zle-line-init
+  zle -N zle-keymap-select auto-fu-zle-keymap-select
+
+  # completion
+  #zstyle ':completion:*' completer _oldlist _complete _match _ignored _approximate _list _history _expand _prefix
 fi
 # 補完キー（Tab,  Ctrl+I) を連打するだけで順に補完候補を自動で補完する
 setopt auto_menu
