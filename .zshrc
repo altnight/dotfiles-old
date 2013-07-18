@@ -26,6 +26,8 @@ SPROMPT="(%R)って(%r)じゃね？そうなら(y)ちゃうなら(n)キャンセ
 export LANG=ja_JP.UTF-8
 export LESSCHARSET=utf-8
 
+# あいまいほかん？
+setopt rec_exact
 # 指定したコマンド名がなく、ディレクトリ名と一致した場合 cd する
 setopt auto_cd
 # cd でTabを押すとdir list を表示
@@ -54,6 +56,25 @@ setopt auto_param_slash
 setopt brace_ccl
 # シンボリックリンクは実体を追うようになる
 #setopt chase_links
+
+# from http://blog.glidenote.com/blog/2012/04/07/auto-fu.zsh/
+#=============================
+# source auto-fu.zsh
+#=============================
+~/.antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-hchbaw-SLASH-auto-fu.zsh.git/auto-fu.zsh
+if [ -f ~/.antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-hchbaw-SLASH-auto-fu.zsh.git/auto-fu.zsh ]; then
+  source ~/.antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-hchbaw-SLASH-auto-fu.zsh.git/auto-fu.zsh
+  function zle-line-init () {
+    auto-fu-init
+  }
+  # -azfu- 表示
+  zle -N zle-line-init
+  zstyle ':completion:*' completer _oldlist _complete _match _ignored _approximate _list _history _expand _prefix
+
+  zstyle ':auto-fu:highlight' input bold
+  zstyle ':auto-fu:highlight' completion fg=white
+  zstyle ':auto-fu:var' postdisplay ''
+fi
 # 補完キー（Tab,  Ctrl+I) を連打するだけで順に補完候補を自動で補完する
 setopt auto_menu
 # sudoも補完の対象
@@ -61,8 +82,9 @@ zstyle ':completion:*:sudo:*' command-path /usr/local/sbin /usr/local/bin /usr/s
 # 色付きで補完する
 zstyle ':completion:*' list-colors di=34 fi=0
 # 過剰に補完
-#zstyle ':completion:*' verbose yes
-zstyle ':completion:*' completer _expand _complete _match _prefix _approximate _list _history
+zstyle ':completion:*' verbose yes
+zstyle ':completion:*' menu select=2
+#zstyle ':completion:*' completer _oldlist _complete _match _ignored _approximate _list _history _expand _prefix
 zstyle ':completion:*:messages' format $YELLOW'%d'$DEFAULT
 zstyle ':completion:*:warnings' format $RED'No matches for:'$YELLOW' %d'$DEFAULT
 zstyle ':completion:*:descriptions' format $YELLOW'completing %B%d%b'$DEFAULT
@@ -71,17 +93,8 @@ zstyle ':completion:*:options' description 'yes'
 # グループ名に空文字列を指定すると，マッチ対象のタグ名がグループ名に使われる。
 # したがって，すべての マッチ種別を別々に表示させたいなら以下のようにする
 zstyle ':completion:*' group-name ''
-# Don't complete uninteresting users
-# 補完しないもの
-#zstyle ':completion:*:*:*:users' ignored-patterns \
-        #adm amanda apache avahi beaglidx bin cacti canna clamav daemon \
-        #dbus distcache dovecot fax ftp games gdm gkrellmd gopher \
-        #hacluster haldaemon halt hsqldb ident junkbust ldap lp mail \
-        #mailman mailnull mldonkey mysql nagios \
-        #named netdump news nfsnobody nobody nscd ntp nut nx openvpn \
-        #operator pcap postfix postgres privoxy pulse pvm quagga radvd \
-        #rpc rpcuser rpm shutdown squid sshd sync uucp vcsa xfs
 #zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+
 # 複数のリダイレクトやパイプなど、必要に応じて tee や cat の機能が使われる
 setopt multios
 # 最後がディレクトリ名で終わっている場合末尾の / を自動的に取り除かない
@@ -280,7 +293,7 @@ function crontab() {
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
 
 # antigen
- [ -f ~/.zsh/antigen/antigen.zsh ] && source ~/dotfiles/.zshrc.antigen
+[ -f ~/.zsh/antigen/antigen.zsh ] && source ~/dotfiles/.zshrc.antigen
 
 # mysql_prompt
 [ -f ~/.antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-tetsujin-SLASH-zsh-function-mysql.git/mysql ] && source ~/dotfiles/.zshrc.mysql
@@ -288,8 +301,6 @@ function crontab() {
 # autojump
 [ -f ~/.autojump/etc/profile.d/autojump.zsh ] && source ~/.autojump/etc/profile.d/autojump.zsh
 
-# incrmental tab suggest
-[ -f ~/.zsh/incr*.zsh ] && source ~/.zsh/incr*.zsh
 
-autoload -Uz compinit
+autoload -U compinit
 compinit

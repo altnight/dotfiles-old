@@ -2,7 +2,7 @@
 
 source ~/.zsh/antigen/antigen.zsh
 
-# いちいち update するの重いから手動で
+# いちいち update するの重いからスクリプトで
 # antigen-update
 # antigen-selfupdate
 
@@ -14,6 +14,7 @@ osx
 zsh-users/zsh-syntax-highlighting
 zsh-users/zsh-completions
 tetsujin/zsh-function-mysql
+hchbaw/auto-fu.zsh
 
 EOF
 
