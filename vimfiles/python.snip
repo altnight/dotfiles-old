@@ -13,3 +13,60 @@ abbr        from see ...
 prev_word   '^'
   from see import see
   print(${1})
+
+snippet     unisnip
+abbr        unittest snippet
+prev_word   '^'
+	import unittest
+
+
+	def setUpModule():
+		print('setUpModule called')
+
+	def tearDownModule():
+		print('tearDownModule called')
+
+
+	class HogeTest(unittest.TestCase):
+
+		def setUp(self):
+			pass
+
+		def tearDown(self):
+			pass
+
+		@classmethod
+		def setUpClass(self):
+			print("tearDownClass called")
+
+		@classmethod
+		def tearDownClass(self):
+			pass
+
+		def test_hoge(self):
+			self.assertEqual(1+1, 2)
+
+	if __name__ == '__main__':
+		unittest.main()
+
+snippet     argp
+abbr        argparser snippet
+prev_word   '^'
+	import argparse
+
+
+	def argparse_snip():
+
+		parser = argparse.ArgumentParser(description='')
+		parser.add_argument('-t', '--type', required=True, default=1, type=int,
+			 dest='type', help='')
+		parser.add_argument('-u', '--user', required=False, default='u', type=str,
+			 dest='user', help='')
+		return parser.parse_args()
+
+	def main():
+		pass
+
+	if __name__ == '__main__':
+		args = argparse_snip()
+		main(args)
