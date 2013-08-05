@@ -157,6 +157,7 @@ NeoBundle 'git://github.com/tpope/vim-markdown.git'
 
 " reST (ft=rst)
 NeoBundle 'git://github.com/vim-scripts/rest.vim.git'
+autocmd FileType rst setlocal foldmethod=marker
 
 " Python
 NeoBundle 'mitechie/pyflakes-pathogen'
