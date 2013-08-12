@@ -152,6 +152,10 @@ NeoBundle 'git://github.com/tpope/vim-haml.git'
 " =G で末尾まで自動インデント
 NeoBundle 'git://github.com/vim-scripts/JavaScript-Indent.git'
 
+"force pep8 indent
+NeoBundle 'https://github.com/hynek/vim-python-pep8-indent.git'
+let g:pymode_indent = 0
+
 " Markdown
 NeoBundle 'git://github.com/tpope/vim-markdown.git'
 
@@ -160,8 +164,19 @@ NeoBundle 'git://github.com/vim-scripts/rest.vim.git'
 autocmd FileType rst setlocal foldmethod=marker
 
 " Python
-NeoBundle 'mitechie/pyflakes-pathogen'
-NeoBundle 'git://github.com/nvie/vim-flake8.git'
+" http://slowquery.hatenablog.com/entry/2013/04/30/020630 etc ...
+NeoBundle 'https://github.com/andviro/flake8-vim'
+"保存時に自動でチェック(off)
+let g:PyFlakeOnWrite = 0
+nnoremap <silent>,fc :PyFlake<CR>
+"解析種別を設定
+let g:PyFlakeCheckers = 'pep8,mccabe,pyflakes'
+"McCabe複雑度の最大値
+let g:PyFlakeDefaultComplexity=10
+"visualモードでQを押すと自動で修正(defalut)
+let g:PyFlakeRangeCommand = 'Q'
+" 全部修正
+nnoremap <silent>,flake :PyFlakeAuto<CR>
 
 " nginxのsyntax
 NeoBundle 'nginx.vim'
@@ -173,16 +188,14 @@ NeoBundle 'git://github.com/aohta/blockdiag.vim.git'
 " 各種構文チェックしてくれるらしい
 NeoBundle 'git://github.com/scrooloose/syntastic.git'
 
-" python は pyflakes-pathogen + flake8
-" vim-pathogen いれろっていわれてるけどそうすると pyflakes
-" の結果を syntastic で表示してくれないので両方いれてる
-"
 " javascript は jshint
-" html は HTML Tidy
 " python は flake8
+" PHP はてきとう
 let g:syntastic_check_on_open=1
+let g:syntastic_python_checkers=['flake8']
+let g:syntastic_php_checkers=['php', 'phpcs', 'phpmd']
 let g:syntastic_mode_map = { 'mode': 'passive',
-                           \ 'active_filetypes': ['python', 'javascript'],
+                           \ 'active_filetypes': ['python', 'javascript', 'php'],
                            \ 'passive_filetypes': [] }
 " =================================================
 " Filer、参照
