@@ -288,15 +288,17 @@ NeoBundle 'molokai'
 " ir_black
 NeoBundle 'git://github.com/wgibbs/vim-irblack.git'
 
-" ステータスラインをちょろっとする
-NeoBundle 'git://github.com/Lokaltog/vim-powerline.git'
-" ステータスラインを常に表示
-set laststatus=2
-
 " 256色モード
 set t_Co=256
 " 256色カラーは各種ターミナルとVimとtmuxやscreenが対応している必要がある
 colorscheme molokai
+
+" ステータスラインをちょろっとする
+NeoBundle 'bling/vim-airline'
+NeoBundle 'itchyny/landscape.vim'
+let g:airline_theme="landscape"
+" ステータスラインを常に表示
+set laststatus=2
 
 " インデントに色付け
 NeoBundle "git://github.com/nathanaelkane/vim-indent-guides.git"
