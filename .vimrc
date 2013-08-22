@@ -120,8 +120,8 @@ NeoBundle 'taglist.vim'
 set tags=tags
 
 " HTMLやXMLなどの賢い展開
-NeoBundle 'git://github.com/mattn/zencoding-vim.git'
-let g:user_zen_expandabbr_key = '<c-e>'
+NeoBundle 'https://github.com/mattn/emmet-vim.git'
+let g:user_emmet_expandabbr_key = '<c-e>'
 
 " Quickfix での置換
 NeoBundle "git://github.com/thinca/vim-qfreplace.git"
