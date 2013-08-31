@@ -279,6 +279,11 @@ NeoBundle 'git://github.com/thinca/vim-quickrun.git'
 " :JunkfileOpen
 " filetype は自前でつけてやる
 NeoBundle 'git://github.com/Shougo/junkfile.vim.git'
+" http://vim-users.jp/2009/12/hack108/
+" let g:junkfile#directory=path/to/local/.vim_junk"
+if filereadable(expand('~/.vimrc.local'))
+  source ~/.vimrc.local
+endif
 
 " =================================================
 " colorschemeとか見た目とか
