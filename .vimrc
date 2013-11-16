@@ -103,14 +103,6 @@ autocmd BufWritePost *.coffee silent CoffeeMake! -cb | cwindow | redraw!
 " python virtualenv
 NeoBundle "git://github.com/jmcantrell/vim-virtualenv.git"
 
-" python jedi
-" pip install jedi, workon virtualenv
-NeoBundle "git://github.com/davidhalter/jedi-vim.git"
-" quickrun とリネーム機能のバッティングを回避
-let g:jedi#rename_command = "<leader>??????"
-" デフォルトのサジェストをオフにする
-let g:jedi#popup_on_dot = 0
-
 " 英語補完
 NeoBundle 'https://github.com/ujihisa/neco-look.git'
 

@@ -1,22 +1,17 @@
 #!/bin/zsh
 
-source ~/.zsh/antigen/antigen.zsh
+#source ~/.zsh/antigen/antigen.zsh
 
-# いちいち update するの重いからスクリプトで
-# antigen-update
-# antigen-selfupdate
+## antigen-update
+## antigen-selfupdate
 
-antigen-bundles << EOF
-django
-git
-osx
+#antigen-bundles << EOF
 
-zsh-users/zsh-syntax-highlighting
-zsh-users/zsh-completions
-tetsujin/zsh-function-mysql
-hchbaw/auto-fu.zsh
+#zsh-users/zsh-syntax-highlighting
+#zsh-users/zsh-completions
+#tetsujin/zsh-function-mysql
+#hchbaw/auto-fu.zsh
 
-EOF
+#EOF
 
-# 適用
-antigen-apply
+#antigen-apply
