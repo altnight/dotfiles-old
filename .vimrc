@@ -157,7 +157,7 @@ autocmd FileType rst setlocal foldmethod=marker
 
 " Python
 " http://slowquery.hatenablog.com/entry/2013/04/30/020630 etc ...
-NeoBundle 'https://github.com/andviro/flake8-vim'
+NeoBundle 'vim-scripts/Flake8-vim'
 "保存時に自動でチェック(off)
 let g:PyFlakeOnWrite = 0
 nnoremap <silent>,fc :PyFlake<CR>
