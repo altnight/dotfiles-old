@@ -70,16 +70,6 @@ autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 autocmd FileType javascript,coffee setlocal omnifunc=javascriptcomplete#CompleteJS
 
-" JScomplete
-NeoBundle 'git://github.com/teramako/jscomplete-vim.git'
-let g:jscomplete_use = ['dom']
-" NOTE: neocomplete の source にはまだなってない
-" jscomplete を優先度高める
-" デフォルトは docs で設定されている
-let g:neocomplcache_source_rank = {
-  \ 'jscomplete' : 500,
-  \ }
-
 " neocomplcache
 " ネオコンのスニペット展開
 NeoBundle 'git://github.com/Shougo/neosnippet.git'
@@ -124,9 +114,6 @@ NeoBundle 'git://github.com/scrooloose/nerdcommenter.git'
 nmap ,c <Plug>NERDCommenterToggle
 vmap ,c <Plug>NERDCommenterToggle
 
-" UTF-8 のエスケープシーケンス表示変換
-" :HideoutOn
-NeoBundle 'git://github.com/osyo-manga/vim-hideout.git'
 
 " make jsdoc
 " call function :JsDoc
