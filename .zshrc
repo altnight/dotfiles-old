@@ -1,7 +1,5 @@
 fpath=(
-  #$HOME/.antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-tetsujin-SLASH-zsh-function-mysql.git
   $HOME/.zsh/*(/N)
-  #$HOME/.antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-zsh-users-SLASH-zsh-completions.git/src
   $fpath
 )
 autoload -U $(echo ~/.zsh/functions/*(:t))
@@ -20,7 +18,6 @@ precmd() {
 }
 
 PROMPT="%{$fg[cyan]%}[%n@%m %~%{$fg[yellow]%}%1v %{$fg[cyan]%}]%{$reset_color%} "
-SPROMPT="(%R)って(%r)じゃね？そうなら(y)ちゃうなら(n)キャンセル(a)シェルに戻る(e):"
 
 # LANG
 export LANG=ja_JP.UTF-8
@@ -62,35 +59,12 @@ setopt brace_ccl
 #=============================
 # source auto-fu.zsh
 #=============================
-if [ -f ~/.antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-hchbaw-SLASH-auto-fu.zsh.git/auto-fu.zsh ]; then
-
-  # precompile の結果
-  # from http://d.hatena.ne.jp/hchbaw/20100603/1275573121
-
-  ## auto-fu.zsh stuff.
-  # source ~/.antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-hchbaw-SLASH-auto-fu.zsh.git/auto-fu.zsh
-
-  { . ~/.zsh/auto-fu; auto-fu-install; }
-  zstyle ':auto-fu:highlight' input bold
-  zstyle ':auto-fu:highlight' completion fg=black,bold
-  zstyle ':auto-fu:highlight' completion/one fg=white,bold,underline
-  zstyle ':auto-fu:var' postdisplay $'\n-azfu-'
-  zstyle ':auto-fu:var' track-keymap-skip opp
-  # azfu 表示と初期化
-  zle-line-init () {auto-fu-init;}; zle -N zle-line-init
-  zle -N zle-keymap-select auto-fu-zle-keymap-select
-
-  # completion
-  zstyle ':completion:*' completer _oldlist _complete _match _ignored _approximate _list _history _expand _prefix
-fi
 # 補完キー（Tab,  Ctrl+I) を連打するだけで順に補完候補を自動で補完する
 setopt auto_menu
 # sudoも補完の対象
 zstyle ':completion:*:sudo:*' command-path /usr/local/sbin /usr/local/bin /usr/sbin /usr/bin /sbin /bin
 # 色付きで補完する
 zstyle ':completion:*' list-colors di=34 fi=0
-# 過剰に補完
-zstyle ':completion:*' verbose yes
 zstyle ':completion:*' menu select=2
 #zstyle ':completion:*' completer _oldlist _complete _match _ignored _approximate _list _history _expand _prefix
 zstyle ':completion:*:messages' format $YELLOW'%d'$DEFAULT
@@ -137,8 +111,8 @@ bindkey '^S' history-incremental-pattern-search-forward
 
 ## Command history configuration
 HISTFILE=~/.zsh_history
-HISTSIZE=10000
-SAVEHIST=10000
+HISTSIZE=100000
+SAVEHIST=100000
 
 # 登録済コマンド行は古い方を削除
 setopt hist_ignore_all_dups
@@ -157,7 +131,7 @@ setopt hist_no_store
 # ファイル名で #, ~, ^ の 3 文字を正規表現として扱う
 #setopt extended_glob
 # zsh の開始・終了時刻をヒストリファイルに書き込む
-#setopt extended_history
+setopt extended_history
 # Ctrl+S/Ctrl+Q によるフロー制御を使わないようにする
 #setopt NO_flow_control
 # 各コマンドが実行されるときにパスをハッシュに入れる
@@ -255,7 +229,6 @@ export PIP_RESPECT_VIRTUALENV=true
 export PIP_REQUIRE_VIRTUELENV=true
 export VIRTUALENV_USE_DISTRIBUTE=1
 alias py='python'
-alias bpy='bpython'
 
 # crontab -r を封印する
 function crontab() {
@@ -273,12 +246,6 @@ function crontab() {
 
 # load local config
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
-
-# antigen
-#[ -f ~/.zsh/antigen/antigen.zsh ] && source ~/dotfiles/.zshrc.antigen
-
-# mysql_prompt
-[ -f ~/.antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-tetsujin-SLASH-zsh-function-mysql.git/mysql ] && source ~/dotfiles/.zshrc.mysql
 
 # autojump
 [ -f ~/.autojump/etc/profile.d/autojump.zsh ] && source ~/.autojump/etc/profile.d/autojump.zsh
